@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Bkup\\c_sharp-journey\\Exemplos\\Exemplo1\\Exemplo1.csproj": {}
+    "C:\\projects\\c_sharp-journey\\Exemplos\\Exemplo1\\Exemplo1.csproj": {}
   },
   "projects": {
-    "C:\\Bkup\\c_sharp-journey\\Exemplos\\Exemplo1\\Exemplo1.csproj": {
+    "C:\\projects\\c_sharp-journey\\Exemplos\\Exemplo1\\Exemplo1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Bkup\\c_sharp-journey\\Exemplos\\Exemplo1\\Exemplo1.csproj",
+        "projectUniqueName": "C:\\projects\\c_sharp-journey\\Exemplos\\Exemplo1\\Exemplo1.csproj",
         "projectName": "Exemplo1",
-        "projectPath": "C:\\Bkup\\c_sharp-journey\\Exemplos\\Exemplo1\\Exemplo1.csproj",
+        "projectPath": "C:\\projects\\c_sharp-journey\\Exemplos\\Exemplo1\\Exemplo1.csproj",
         "packagesPath": "C:\\Users\\Vanessa\\.nuget\\packages\\",
-        "outputPath": "C:\\Bkup\\c_sharp-journey\\Exemplos\\Exemplo1\\obj\\",
+        "outputPath": "C:\\projects\\c_sharp-journey\\Exemplos\\Exemplo1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vanessa\\AppData\\Roaming\\NuGet\\NuGet.Config",
