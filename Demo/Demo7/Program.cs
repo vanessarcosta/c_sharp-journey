@@ -7,6 +7,7 @@
             //Declarar e inicializar uma variável
             double saldo = 550.55, valorADepositar;
             string nome = "João";
+            char tecla = 'k';
 
             Console.WriteLine($"Como se chama ?");
             nome = Console.ReadLine();
