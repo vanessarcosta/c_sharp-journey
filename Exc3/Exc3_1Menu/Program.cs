@@ -20,7 +20,8 @@ namespace Exc3_1Menu
             codigo = Convert.ToInt32(Console.ReadLine());
             Console.Write("Insira o quantidade: ");
             quantidade = Convert.ToInt32(Console.ReadLine());
-
+            
+            
             switch (codigo)
             {
                 case 100:
