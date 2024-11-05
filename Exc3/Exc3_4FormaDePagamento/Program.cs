@@ -21,8 +21,7 @@
             switch (codigo)
             {
                 case 1:
-                    preco -= (preco * 0.3);
-                    Console.Write($"Valor a pagar {preco} ");
+                    preco -= (preco * 0.3);                    
                     break;
                 case 2:
                     preco -= (preco * 0.2);
@@ -31,7 +30,6 @@
                     preco -= (preco * 0.1);
                     break;
                 case 4:
-
                     break;
             }
 
