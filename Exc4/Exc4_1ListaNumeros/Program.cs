@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int numero = 0;
+            do
+            {
+                Console.WriteLine(numero);
+                numero++;                
+            }
+            while (numero <= 20);
         }
     }
 }
