@@ -14,9 +14,19 @@
             {
                 //corpo do ciclo
                 Console.WriteLine(numero);
-                numero++;
+                numero++; //é a mesma coisa que numero = numero + 1;
             }
             while (numero <=20);
+
+            //Quando sai do cilco anterior numero = 21
+
+            while (numero >0)
+            {
+                //corpo do ciclo
+                numero--;// numero = numero -1;
+                Console.WriteLine(numero);
+            }
+
         }
     }
 }
