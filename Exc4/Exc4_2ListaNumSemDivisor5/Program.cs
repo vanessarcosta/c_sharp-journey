@@ -8,16 +8,15 @@
 
             Console.WriteLine(numero);
             do
-            {                
+            {
                 numero++;
 
-                if (numero % 5 !=0.0)
-                {                  
+                if (numero % 5 != 0.0)
+                {
                     Console.WriteLine(numero);
-                }                
+                }
             }
             while (numero < 20);
-
         }
     }
 }
