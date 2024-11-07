@@ -9,6 +9,7 @@
 
             Console.WriteLine("Insira um número");
             //teste = int.TryParse(Console.ReadLine(), out numero);
+            //if (teste)...
 
             if (int.TryParse(Console.ReadLine(), out numero))
             {
