@@ -26,7 +26,7 @@
             {
                 media = (nota1 * 3.0 + nota2 * 3.0 + nota3 * 4.0) / 10;
             }
-
+             
             if (media >= 5)
             {
                 Console.WriteLine($"O aluno com código n.{codigo} obteve as seguintes notas:");
