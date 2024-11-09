@@ -6,7 +6,10 @@ class Program
     {
         int idade;
         double salario;
-        char sexo;
+        char sexo, op;
+
+        do
+        {
 
         do
         {
@@ -25,6 +28,14 @@ class Program
             Console.WriteLine("Informe o salário: ");
         }
         while (!double.TryParse(Console.ReadLine(), out salario));
+
+            do
+            {
+                Console.WriteLine("Continuar a inserir dados (S/N)");
+            }
+            while (!char.TryParse(Console.ReadLine(), out op));
+        }
+        while (op == 's' || op == 'S');
 
     }
 }
