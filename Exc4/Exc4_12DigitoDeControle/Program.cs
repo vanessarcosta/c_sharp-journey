@@ -1,10 +1,12 @@
-﻿namespace Exc4_12DigitoDeControle
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace Exc4_12DigitoDeControle
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int numero;
+            int numero , i =0, soma = 0,j=1;
 
             do
             {
@@ -12,7 +14,30 @@
             }
             while (!int.TryParse(Console.ReadLine(), out numero));
 
+            //Transforma numero em string
             string numeroStr = numero.ToString();
+
+            //coloca o tamanho da string na variavel i
+            i = numeroStr.Length - 1;
+
+            do
+            {
+                //roda o vetor onde está o numero
+                // e coloca cada pedaco na variavel digito
+                int digito = int.Parse(numeroStr[i].ToString());
+
+                //multiplicar cada digito por 1,2,3.. e somar o produto
+                soma += digito * j;
+               
+                Console.WriteLine($"Dígito {i + 1}: {digito}..{soma}");
+                //contador para a multiplicação
+                j++;
+                //contador para andar no vetor
+                i--;
+            }
+            while (j <= numeroStr.Length);
+
+
 
         }
     }
