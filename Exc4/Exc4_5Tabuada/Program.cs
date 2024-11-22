@@ -4,11 +4,18 @@
     {
         static void Main(string[] args)
         {
-            int x = 0, y = 0;
+            int x, y = 0;
 
-            Console.WriteLine("Digite o primeiro número: ");
-            int.TryParse(Console.ReadLine(), out x);
-
+            do
+            {
+                do
+                {
+                    Console.WriteLine("Digite um número inteiro entre 1 e 10: ");
+                }
+                while (!int.TryParse(Console.ReadLine(), out x));
+            }
+            while (x < 1 || x > 10);
+            
             Console.Clear();
             while (y <= 9)
             {
