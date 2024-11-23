@@ -22,6 +22,14 @@
                 }
                 while (!int.TryParse(Console.ReadLine(),out numeros[i]));
             }
+
+            Console.Clear();
+            Console.WriteLine("Vetor digitado: ");
+
+            for (int j = 0; j < numeros.Length; j++)
+            {
+                Console.WriteLine(numeros[j]);
+            }
         }
     }
 }
