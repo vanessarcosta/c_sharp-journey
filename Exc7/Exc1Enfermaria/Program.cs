@@ -37,6 +37,20 @@
                 mediaPulsacoes[j] = totalPulsacao/3;
                 totalPulsacao = 0;
             }
+
+            int posicaoLeito = 0;
+            double maiorValor = 0;
+
+            for (int i = 0; i < mediaPulsacoes.Length; i++)
+            {
+                if (mediaPulsacoes[i] > maiorValor)
+                {
+                    maiorValor = mediaPulsacoes[i];
+                    posicaoLeito = i;
+                }
+            }
+            Console.WriteLine($"O paciente do leito {posicaoLeito +1} apresentou a maior valor médio =" +
+                $"{maiorValor:N2} de pulsações entre os leitos.");
         }
     }
 }
