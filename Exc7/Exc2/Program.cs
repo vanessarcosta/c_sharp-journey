@@ -53,7 +53,7 @@
                     totalCol += numeros[j,i];
                     
                 }
-                Console.WriteLine($"A média dos elementos da coluna {k} é {totalCol / 3}\n");
+                Console.WriteLine($"A média dos elementos da coluna {k} é {totalCol / 3:N2}\n");
                 k++;
                 totalCol = 0;
             }
@@ -66,8 +66,26 @@
 
             Console.WriteLine($"A soma dos elementos da linha 3 é {somaLin3}\n");
 
+            int col= 0;
+            do
+            {
+                Console.Write($"Escolha uma coluna: ");
+            } while (!int.TryParse(Console.ReadLine(), out col));
 
+            int somaLin = 0;
+            col -= 1;
+            for (int j = 0; j < 3; j++)
+            {
+                somaLin += numeros[j,col];
+            }
+            Console.WriteLine($"A soma dos elementos da coluna {col+1} é {somaLin}\n");
 
+            int somaDiagonal = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                somaDiagonal += numeros[i,i];
+            }
+            Console.WriteLine($"A soma dos elementos da diagonal principal é {somaDiagonal}\n");
         }
     }
 }
