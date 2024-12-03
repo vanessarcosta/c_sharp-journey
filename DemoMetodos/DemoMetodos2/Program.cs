@@ -24,6 +24,12 @@
 
         }
 
+        /// <summary>
+        /// soma os dois operandos
+        /// </summary>
+        /// <param name="operando1"></param>
+        /// <param name="operando2"></param>
+        /// <returns>soma de dois inteiros</returns>
         static int Soma(int operando1, int operando2)
         {
             return operando1 + operando2;
