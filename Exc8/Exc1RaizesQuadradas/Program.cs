@@ -12,19 +12,25 @@ namespace Exc1RaizesQuadradas
             CalculaRaiz(Inf, Sup);  
                       
         }
-
+        /// <summary>
+        /// Calcula e imprime a raiz dentro de um intervalo
+        /// </summary>
+        /// <param name="Inf">Limite inferior do intervalo</param>
+        /// <param name="Sup">Limite superior do intervalo</param>
         static void  CalculaRaiz(int Inf, int Sup)
         {
-            double aux = Inf +1, raiz = 0.0;
-            for (int i = Inf +1; i < Sup; i++)
+            double raiz = 0.0;
+            for (Inf += 1; Inf < Sup; Inf++)
             {
-                raiz = Math.Sqrt(aux);
-                Console.WriteLine($"A raiz quadrada de {aux} = {raiz:N2}.");
-                aux++;
+                raiz = Math.Sqrt(Inf);
+                Console.WriteLine($"A raiz quadrada de {Inf} = {raiz:N2}.");
             }
 
         }
-
+        /// <summary>
+        /// Pede o segundo número do intervalo
+        /// </summary>
+        /// <returns>o segundo inteiro</returns>
         static int PedirNumeroSup()
         {
             int numero;
@@ -39,7 +45,10 @@ namespace Exc1RaizesQuadradas
             return numero;
         }
 
-
+        /// <summary>
+        /// Pede o primeiro número do intervalo
+        /// </summary>
+        /// <returns>o primeiro inteiro</returns>
         static int PedirNumeroInf()
         {
             int numero;
