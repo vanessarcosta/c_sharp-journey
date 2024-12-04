@@ -4,14 +4,39 @@
     {
         static void Main(string[] args)
         {
-            int l;
+            int l, X;
 
             l = TamanhoDoVetor();
 
             string[] nomes = new string[l];
 
             PreencheTabela(nomes);
+            
+            X = TamanhoDoVetorPrint();
+            MostraTabela(nomes,X);
 
+        }
+
+        static void MostraTabela(string[] nomes, int X)
+        {
+            for (int i = 0; i < X; i++)
+            {
+                Console.WriteLine(nomes[i]);
+            }
+        }
+        ///
+        static int TamanhoDoVetorPrint()
+        {
+            int numero;
+
+            do
+            {
+                Console.Write("Quantos nomes deseja imprimir? ");
+            }
+
+            while (!int.TryParse(Console.ReadLine(), out numero));
+
+            return numero;
         }
 
         static void PreencheTabela(string[] nomes)
