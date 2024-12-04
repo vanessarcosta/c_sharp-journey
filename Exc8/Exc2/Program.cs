@@ -15,13 +15,20 @@ namespace Exc2
                 Console.WriteLine($"A raiz quadrada de {Inf+1} = {CalculaRaiz(Inf):N2}.");
             }
         }
-
+        /// <summary>
+        /// Calcula a raiz quadrada
+        /// </summary>
+        /// <param name="Inf">Radicando da raiz</param>
+        /// <returns>a raiz double</returns>
         static double CalculaRaiz(int Inf)
         {
             double raiz = Math.Sqrt(Inf+1);
             return raiz; 
         }
-
+        /// <summary>
+        /// Pede o segundo número do intervalo
+        /// </summary>
+        /// <returns>o segundo inteiro</returns>
         static int PedirNumeroSup()
         {
             int numero;
@@ -35,7 +42,10 @@ namespace Exc2
 
             return numero;
         }
-
+        /// <summary>
+        /// Pede o primeiro número do intervalo
+        /// </summary>
+        /// <returns>o primeiro inteiro</returns>
         static int PedirNumeroInf()
         {
             int numero;
