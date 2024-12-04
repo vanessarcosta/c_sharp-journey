@@ -18,7 +18,11 @@
             Console.WriteLine($"Primeiro conjunto de caracteres: {primeiraString}.");
             Console.WriteLine($"Segundo conjunto de caracteres: {segundaString}");
         }
-   
+        /// <summary>
+        /// Troca de variavel
+        /// </summary>
+        /// <param name="primeiroParametro">Primeira variavel</param>
+        /// <param name="segundoParametro">Segunda variavel</param>
         static void TrocarStrings(ref string primeiroParametro, ref string segundoParametro)
         {
             string aux = primeiroParametro;
