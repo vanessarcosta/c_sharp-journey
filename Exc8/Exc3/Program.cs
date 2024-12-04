@@ -17,6 +17,11 @@
 
         }
 
+        /// <summary>
+        /// Imprimi lista de nomes selecionada
+        /// </summary>
+        /// <param name="nomes">Lista de nomes</param>
+        /// <param name="X">Números de nomes selecionado</param>
         static void MostraTabela(string[] nomes, int X)
         {
             for (int i = 0; i < X; i++)
@@ -24,7 +29,11 @@
                 Console.WriteLine(nomes[i]);
             }
         }
-        ///
+
+        /// <summary>
+        /// Tamanho do vetor para print
+        /// </summary>
+        /// <returns>inteiro tamanho da lista</returns>
         static int TamanhoDoVetorPrint()
         {
             int numero;
@@ -39,6 +48,10 @@
             return numero;
         }
 
+        /// <summary>
+        /// Preenche a lista de nomes
+        /// </summary>
+        /// <param name="nomes">Lista de nomes</param>
         static void PreencheTabela(string[] nomes)
         {
             for (int i = 0; i < nomes.Length; i++)
@@ -47,6 +60,11 @@
                 nomes[i] = Console.ReadLine();
             }
         }
+
+        /// <summary>
+        /// Pede o tamanho do vetor
+        /// </summary>
+        /// <returns>numero inteiro</returns>
         static int TamanhoDoVetor()
         {
             int numero;
