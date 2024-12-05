@@ -6,53 +6,37 @@ namespace Exc2
     {
         static void Main(string[] args)
         {
-            int Inf, Sup;
-            Inf = PedirNumeroInf();
-            Sup = PedirNumeroSup();
+            int limiteInferior, limiteSuperior;
+            limiteInferior = PedirNumero();
+            limiteSuperior = PedirNumero();
 
-            for (; Inf < Sup-1; Inf++)
+            for (; limiteInferior <= limiteSuperior; limiteInferior++)
             {
-                Console.WriteLine($"A raiz quadrada de {Inf+1} = {CalculaRaiz(Inf):N2}.");
+                Console.WriteLine($"A raiz quadrada de {limiteInferior} = {CalculaRaiz(limiteInferior):N2}.");
             }
         }
         /// <summary>
         /// Calcula a raiz quadrada
         /// </summary>
-        /// <param name="Inf">Radicando da raiz</param>
-        /// <returns>a raiz double</returns>
-        static double CalculaRaiz(int Inf)
+        /// <param name="numero">Radicando da raiz</param>
+        /// <returns>raiz</returns>
+        static double CalculaRaiz(int radicando)
         {
-            double raiz = Math.Sqrt(Inf+1);
+            double raiz = Math.Sqrt(radicando);
             return raiz; 
         }
+
         /// <summary>
-        /// Pede o segundo número do intervalo
+        /// Pede o  número do intervalo
         /// </summary>
-        /// <returns>o segundo inteiro</returns>
-        static int PedirNumeroSup()
+        /// <returns>número inteiro</returns>
+        static int PedirNumero()
         {
             int numero;
 
             do
             {
-                Console.Write("Insira o segundo número: ");
-            }
-
-            while (!int.TryParse(Console.ReadLine(), out numero));
-
-            return numero;
-        }
-        /// <summary>
-        /// Pede o primeiro número do intervalo
-        /// </summary>
-        /// <returns>o primeiro inteiro</returns>
-        static int PedirNumeroInf()
-        {
-            int numero;
-
-            do
-            {
-                Console.Write("Insira o primeiro número: ");
+                Console.Write("Insira um número: ");
             }
 
             while (!int.TryParse(Console.ReadLine(), out numero));
