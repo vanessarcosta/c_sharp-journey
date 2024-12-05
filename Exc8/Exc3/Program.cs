@@ -4,15 +4,16 @@
     {
         static void Main(string[] args)
         {
-            int l, X;
+            int tamanhoDoVetor, X;
 
-            l = TamanhoDoVetor();
+            Console.Write("Quantos nomes deseja digitar? ");
+            tamanhoDoVetor = ValidaTamanhoDoVetor();
 
-            string[] nomes = new string[l];
-
+            string[] nomes = new string[tamanhoDoVetor];
             PreencheTabela(nomes);
-            
-            X = TamanhoDoVetorPrint();
+
+            Console.Write("Quantos nomes deseja imprimir? ");
+            X = ValidaTamanhoDoVetor();
             MostraTabela(nomes,X);
 
         }
@@ -21,31 +22,13 @@
         /// Imprimi lista de nomes selecionada
         /// </summary>
         /// <param name="nomes">Lista de nomes</param>
-        /// <param name="X">Números de nomes selecionado</param>
+        /// <param name="X">Números de nomes a selecionar</param>
         static void MostraTabela(string[] nomes, int X)
         {
             for (int i = 0; i < X; i++)
             {
                 Console.WriteLine(nomes[i]);
             }
-        }
-
-        /// <summary>
-        /// Tamanho do vetor para print
-        /// </summary>
-        /// <returns>inteiro tamanho da lista</returns>
-        static int TamanhoDoVetorPrint()
-        {
-            int numero;
-
-            do
-            {
-                Console.Write("Quantos nomes deseja imprimir? ");
-            }
-
-            while (!int.TryParse(Console.ReadLine(), out numero));
-
-            return numero;
         }
 
         /// <summary>
@@ -62,19 +45,17 @@
         }
 
         /// <summary>
-        /// Pede o tamanho do vetor
+        /// Valida o tamanho do vetor
         /// </summary>
-        /// <returns>numero inteiro</returns>
-        static int TamanhoDoVetor()
+        /// <returns>numero</returns>
+        static int ValidaTamanhoDoVetor()
         {
             int numero;
 
-            do
+            while (!int.TryParse(Console.ReadLine(), out numero))
             {
-                Console.Write("Quantos nomes deseja digitar? ");
+                Console.Write("Parâmetro inncorreto, digite novamente: ");
             }
-
-            while (!int.TryParse(Console.ReadLine(), out numero));
 
             return numero;
         }
