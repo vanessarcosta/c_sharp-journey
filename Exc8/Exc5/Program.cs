@@ -14,7 +14,11 @@ namespace Exc5
             PreencheArray(nome);
             Console.WriteLine($"Quantidades de nomes que começam por A, B ou C: {ProcuraNome(nome)}");
         }
-
+        /// <summary>
+        /// Procura nome que inicia com A, B e C
+        /// </summary>
+        /// <param name="nome">Nome digitado pelo utilizador</param>
+        /// <returns>numero</returns>
         static int ProcuraNome(string[] nome)
         {
             int quantidadeNomes = 0;
@@ -29,7 +33,10 @@ namespace Exc5
             }
                  return quantidadeNomes;
         }
-
+       /// <summary>
+       /// Preenche um array
+       /// </summary>
+       /// <param name="nome">Nome digitado pelo utilizador</param>
         static void PreencheArray(string[] nome)
         {
             for (int i = 0; i < nome.Length; i++)
@@ -38,7 +45,10 @@ namespace Exc5
                 nome[i] = Console.ReadLine();
             }
         }
-
+        /// <summary>
+        /// Pede para determinar o tamanho do array
+        /// </summary>
+        /// <returns>numero</returns>
         static int TamanhoDoArray()
         {
             int numero;
