@@ -17,6 +17,12 @@
             Console.WriteLine($"O valor em segundos equivale a {horas} horas, {minutos} minutos e {segundos} secundos.");
 
         }
+
+        /// <summary>
+        /// Converte segundos em minutos e horas
+        /// </summary>
+        /// <param name="numero">Números em segundos</param>
+        /// <returns>numero</returns>
         static (int, int) ConverteMinutosEHoras( ref int numero)
         {
             int resto = 0;
@@ -28,6 +34,11 @@
             return (numero, resto);
 
         }
+
+        /// <summary>
+        /// Valida numero inserido pelo usúario
+        /// </summary>
+        /// <returns>numero</returns>
         static int PedeNumero()
         {
             int numero;
