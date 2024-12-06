@@ -26,6 +26,13 @@ namespace Exc7
             Console.WriteLine($"\nA soma dos valores da linha {linha} e coluna {coluna} = {soma} ");
 
         }
+        /// <summary>
+        /// Soma uma linha com uma coluna
+        /// </summary>
+        /// <param name="elemento">matriz</param>
+        /// <param name="i">linha</param>
+        /// <param name="j">coluna</param>
+        /// <returns>numero</returns>
         static int SomaLinhaOuColuna(int[,] elemento, int i, int j)
         {
             int soma = 0;
@@ -45,6 +52,12 @@ namespace Exc7
             }
             return soma;
         }
+        /// <summary>
+        /// Print da linha ou coluna
+        /// </summary>
+        /// <param name="elemento">matriz</param>
+        /// <param name="i">linha</param>
+        /// <param name="j">coluna</param>
         static void MostraLinhaOuColuna(int[,] elemento, int i, int j)
         {
             if (i != 0)
@@ -64,6 +77,10 @@ namespace Exc7
                 }
             }
         }
+        /// <summary>
+        /// Preenche matriz
+        /// </summary>
+        /// <param name="elemento">matriz</param>
         static void PreencheMatriz(int[,] elemento) 
         {
             for (int i = 0; i < 3; i++)
@@ -77,7 +94,10 @@ namespace Exc7
                 }
             }
         }
-
+        /// <summary>
+        /// Valida um valor de entrada
+        /// </summary>
+        /// <returns></returns>
         static int ValidaQuantidade()
         {
             int numero;
