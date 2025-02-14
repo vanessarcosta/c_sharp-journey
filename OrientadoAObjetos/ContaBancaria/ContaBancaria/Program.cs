@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using ContaBancaria;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ContaBancaria
 {
@@ -7,9 +8,8 @@ namespace ContaBancaria
     {
         static void Main(string[] args)
         {
-            string escolhaDepositoIncial;
 
-            Conta conta = new Conta();
+            Conta conta =new Conta();
 
             Console.Write("Entre o número da conta: ");
             conta.Numero = int.Parse(Console.ReadLine());
@@ -17,31 +17,31 @@ namespace ContaBancaria
             Console.Write("Entre o titular da conta: ");
             conta.Titular = Console.ReadLine();
 
-            Console.Write("Haverá depósito incial (s/n)?");
-            escolhaDepositoIncial = Console.ReadLine();
+            Console.Write("Haverá depósito incial (s/n)? ");
+            char escolhaDepositoIncial = char.Parse(Console.ReadLine());
 
-            if (escolhaDepositoIncial == "s")
+            if (escolhaDepositoIncial == 's' || escolhaDepositoIncial == 'S')
             {
-                Console.Write("Entre o valor de depósito incial: ");
-                conta.DepositoInicial = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                conta.RealizarDeposito(conta.Saldo, conta.DepositoInicial);
+                Console.Write("Entre o valor de depósito inicial: ");
+                double depositoInicial = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                conta.RealizarDeposito(depositoInicial);
             }
 
             Console.WriteLine();
             Console.WriteLine("Dados da conta: ");
-            Console.WriteLine(conta.ToString());
+            Console.WriteLine(conta);  //   Console.WriteLine(conta.ToString()); mesma forma 
 
             Console.WriteLine();
             Console.Write("Entre um valor para depósito: ");
-            conta.Valor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            conta.RealizarDeposito(conta.Saldo, conta.Valor);
+            double valor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            conta.RealizarDeposito(valor);
             Console.WriteLine("Dados da conta atualizados: ");
-            Console.WriteLine(conta.ToString());
+            Console.WriteLine(conta);
 
             Console.WriteLine();
             Console.Write("Entre um valor para saque: ");
-            conta.Valor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            conta.RealizarSaque(conta.Saldo, conta.Valor);
+            valor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            conta.RealizarSaque(valor);
             Console.WriteLine("Dados da conta atualizados: ");
             Console.WriteLine(conta.ToString());
 

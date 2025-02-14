@@ -5,10 +5,8 @@ namespace ContaBancaria
     class Conta
     {
         public int Numero { get; set; }
-        public double DepositoInicial { get; set;}
         public double Saldo {get; private set;}
-        public double TaxaDeSaque  { get; }
-        public double Valor { get; set; }
+        public double TaxaDeSaque  { get;}
 
         string titular;
         public string Titular
@@ -25,16 +23,16 @@ namespace ContaBancaria
         }
         public Conta() 
         {
+            Numero = Numero;
+            Titular = titular;
             TaxaDeSaque = 5.00;
-            Saldo = 0.00;
+            Saldo = 0.00;  //inicia por padrão em 0
         }
 
-        public Conta(int numero, string titular, double depositoIncial, double saldo)
+        public Conta(int numero, string titular, double depositoIncial, double taxaDeSaque) 
         {
-            Numero = numero;
-            Titular = titular;
-            Saldo = depositoIncial;
-            TaxaDeSaque = 5.00;
+            RealizarDeposito(depositoIncial);
+          //  Saldo = depositoIncial; mellhor colocar o método e não fazer atribuição direta(se mudar o método para depósito atualiza junto tbm
         }
         #region Methods
         public void AlterarNome(string titularAtualizado)
@@ -42,15 +40,14 @@ namespace ContaBancaria
             Titular = titularAtualizado;
         }
 
-        public void RealizarDeposito(double saldoAnterior, double valor)
+        public void RealizarDeposito(double valor)
         {
-            Saldo = saldoAnterior + valor;
+            Saldo += valor;
         }
 
-        public double RealizarSaque(double saldoAnterior, double valor)
+        public void RealizarSaque(double valor)
         {
-            Saldo = saldoAnterior - valor - TaxaDeSaque;
-            return Saldo;
+            Saldo -=  valor + TaxaDeSaque;
         }
         public override string ToString()
         {
