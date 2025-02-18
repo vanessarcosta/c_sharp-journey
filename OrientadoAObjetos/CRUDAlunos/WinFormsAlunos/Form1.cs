@@ -14,5 +14,53 @@ namespace WinFormsAlunos
             Alunos = new List<Aluno>();  //instancializa uma lista vazia
             InitializeComponent();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Aluno novoAluno;
+
+            if (ValidaForm())
+            {
+                novoAluno = new Aluno
+                {
+                    Id = contaAlunos,
+                    Nome = txtNomeAluno.Text,
+                    Apelido = txtApelidoAluno.Text,
+                };
+
+                Alunos.Add(novoAluno);
+                contaAlunos++;
+
+                InitLista();
+            }
+            else
+            {
+                MessageBox.Show("Preencha corretamente os dados e tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void InitLista()
+        {
+            AlunosListBox.DataSource = Alunos;
+        }
+
+        private bool ValidaForm()
+        {
+            bool output = true;
+
+            if (string.IsNullOrEmpty(txtNomeAluno.Text))
+            {
+                MessageBox.Show("Insira o nome do aluno", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                output = false;
+            }
+
+            if (string.IsNullOrEmpty(txtApelidoAluno.Text))
+            {
+                MessageBox.Show("Insira o apelido do aluno", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                output = false;
+            }
+
+            return output;
+        }
     }
 }
