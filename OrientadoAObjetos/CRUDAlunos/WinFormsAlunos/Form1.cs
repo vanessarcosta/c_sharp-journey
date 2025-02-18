@@ -37,11 +37,16 @@ namespace WinFormsAlunos
             {
                 MessageBox.Show("Preencha corretamente os dados e tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
+            txtNomeAluno.Text = string.Empty;
+            txtApelidoAluno.Text = string.Empty;
         }
 
         private void InitLista()
         {
+            AlunosListBox.DataSource = null;
             AlunosListBox.DataSource = Alunos;
+            AlunosListBox.DisplayMember = "NomeCompleto";
         }
 
         private bool ValidaForm()
@@ -61,6 +66,46 @@ namespace WinFormsAlunos
             }
 
             return output;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtNomeAluno.Text = string.Empty;
+            txtApelidoAluno.Text = string.Empty;
+        }
+
+        private void btnApagarAluno_Click(object sender, EventArgs e)
+        {
+            Aluno alunoAApagar = (Aluno)AlunosListBox.SelectedItem;
+
+            Aluno apagado = null;
+
+            if (alunoAApagar != null)
+            {
+                foreach (Aluno aluno in Alunos)
+                {
+                    if (alunoAApagar.Id == aluno.Id)
+                    { 
+                        apagado = aluno;
+                    }
+                }
+
+                if(apagado != null)
+                {
+                    DialogResult resposta;
+                    resposta = MessageBox.Show($"Tem a certeza que pretende apagar o {apagado.NomeCompleto}",
+                        "Apagar",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Question);
+
+                    if (DialogResult.OK == resposta)
+                    {
+                        Alunos.Remove(apagado);
+                        InitLista();
+                    }
+
+                }
+            }
         }
     }
 }

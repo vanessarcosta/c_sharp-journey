@@ -102,6 +102,7 @@
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnGuardar
             // 
@@ -131,6 +132,7 @@
             btnApagarAluno.TabIndex = 9;
             btnApagarAluno.Text = "Apagar aluno selecionado";
             btnApagarAluno.UseVisualStyleBackColor = true;
+            btnApagarAluno.Click += btnApagarAluno_Click;
             // 
             // btnEditarAluno
             // 
