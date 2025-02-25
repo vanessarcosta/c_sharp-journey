@@ -15,11 +15,10 @@ namespace UpdateEmployeesSalary
             Console.Write(" How many employess will be registered? ");
             int n = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < n; i++)
+            for (int i = 1; i < n; i++)
             {
                 Console.WriteLine();
-
-                Console.WriteLine($"Employee #{i + 1}");
+                Console.WriteLine($"Employee #{i}");
                 Console.Write("Id: ");
                 id = int.Parse(Console.ReadLine());
                 Console.Write("Name: ");
@@ -27,27 +26,30 @@ namespace UpdateEmployeesSalary
                 Console.Write("Salary: ");
                 double salary = double.Parse(Console.ReadLine());
                 employees.Add(new Employee(id, name, salary));
-
             }
             Console.WriteLine();
 
             Console.Write("Enter the employee id that will have salary increase: ");
             id = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the percentage: ");
-            percentage = double.Parse(Console.ReadLine());
-
             Employee index = employees.Find(x => x.Id == id);
+            if (index != null)
+            {
+                Console.Write("Enter the percentage: ");
+                percentage = double.Parse(Console.ReadLine());
+                index.IncreaseSalary(percentage);
+            }
+            else
+            {
+                Console.WriteLine("This id does not exist!");
+            }
 
-            index.IncreaseSalary(percentage);
-
+            Console.WriteLine();
             Console.WriteLine("Update list of employess: ");
-
             foreach (Employee obj in employees)
             {
                 Console.WriteLine(obj);
             }
-
         }
     }
 }
