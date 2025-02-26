@@ -35,13 +35,14 @@ namespace WinFormsDisciplinas
             {
                 MessageBox.Show("Preencha corretamente os dados e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            txtNomeDisciplina.Text = string.Empty;
         }
 
         private void InitLista()
         {
-           DisciplinaListBox.DataSource = null;        //limpa o interface 
-           DisciplinaListBox.DataSource = Disciplinas;  // associar lista ao DataSource da ListBox
-           DisciplinaListBox.DisplayMember = "Nome";
+            DisciplinaListBox.DataSource = null;        //limpa o interface 
+            DisciplinaListBox.DataSource = Disciplinas;  // associar lista ao DataSource da ListBox
+            DisciplinaListBox.DisplayMember = "Nome";
         }
         private bool ValidaForm()
         {
@@ -54,6 +55,40 @@ namespace WinFormsDisciplinas
             }
             return output;
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtNomeDisciplina.Text = string.Empty;
+        }
+
+        private void btnApagarDisciplina_Click(object sender, EventArgs e)
+        {
+            Disciplina disciplinaAApagar = (Disciplina)DisciplinaListBox.SelectedItem;
+
+            Disciplina apagada = null;
+
+            if (disciplinaAApagar != null)
+            {
+                foreach(Disciplina disciplina in Disciplinas)
+                {
+                    apagada = disciplina;
+                }
+            }
+
+            if (apagada != null)
+            {
+                DialogResult resposta;
+                resposta = MessageBox.Show($"Tem certeza que pretende apagar a disciplina: {apagada.Nome}", 
+                    "Apagar",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if(DialogResult.OK == resposta)
+                {
+                    Disciplinas.Remove(apagada);
+                    InitLista();
+                }
+            }
         }
     }
 }

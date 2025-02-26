@@ -71,6 +71,7 @@
             btnApagarDisciplina.TabIndex = 14;
             btnApagarDisciplina.Text = "Apagar disciplina selecionada";
             btnApagarDisciplina.UseVisualStyleBackColor = true;
+            btnApagarDisciplina.Click += btnApagarDisciplina_Click;
             // 
             // DisciplinaListBox
             // 
@@ -100,6 +101,7 @@
             btnCancelar.TabIndex = 11;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // Form1
             // 
