@@ -13,8 +13,8 @@ namespace WinFormsAlunos
         {
             Alunos = new List<Aluno>();  //instancializa uma lista vazia
             InitializeComponent();
+            txtIdAluno.Text = contaAlunos.ToString();   
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Aluno novoAluno;
@@ -40,9 +40,10 @@ namespace WinFormsAlunos
 
             txtNomeAluno.Text = string.Empty;
             txtApelidoAluno.Text = string.Empty;
+            txtIdAluno.Text = contaAlunos.ToString();
         }
 
-        private void InitLista()
+        public void InitLista()
         {
             AlunosListBox.DataSource = null;
             AlunosListBox.DataSource = Alunos;
@@ -85,12 +86,12 @@ namespace WinFormsAlunos
                 foreach (Aluno aluno in Alunos)
                 {
                     if (alunoAApagar.Id == aluno.Id)
-                    { 
+                    {
                         apagado = aluno;
                     }
                 }
 
-                if(apagado != null)
+                if (apagado != null)
                 {
                     DialogResult resposta;
                     resposta = MessageBox.Show($"Tem a certeza que pretende apagar o {apagado.NomeCompleto}",
@@ -103,8 +104,28 @@ namespace WinFormsAlunos
                         Alunos.Remove(apagado);
                         InitLista();
                     }
-
                 }
+            }
+        }
+
+        private void btnEditarAluno_Click(object sender, EventArgs e)
+        {
+            Aluno alunoAEditar = (Aluno)AlunosListBox.SelectedItem;
+            Aluno editado = null;
+
+            if (alunoAEditar != null)
+            {
+                foreach (Aluno aluno in Alunos)
+                {
+                    if (alunoAEditar.Id == aluno.Id)
+                    {
+                        editado = aluno;
+                    }
+                }
+
+                //abrir a nova form para editar
+                EditarAlunoForm editarAlunoForm = new EditarAlunoForm(this, editado);
+                editarAlunoForm.Show();
             }
         }
     }
