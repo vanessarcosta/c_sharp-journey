@@ -11,6 +11,7 @@ namespace WinFormsDisciplinas
         {
             Disciplinas = new List<Disciplina>();
             InitializeComponent();
+            txtIdDisciplina.Text = contaDisciplina.ToString();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -36,9 +37,11 @@ namespace WinFormsDisciplinas
                 MessageBox.Show("Preencha corretamente os dados e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             txtNomeDisciplina.Text = string.Empty;
+            txtIdDisciplina.Text = contaDisciplina.ToString();
+
         }
 
-        private void InitLista()
+        public void InitLista()
         {
             DisciplinaListBox.DataSource = null;        //limpa o interface 
             DisciplinaListBox.DataSource = Disciplinas;  // associar lista ao DataSource da ListBox
@@ -54,7 +57,6 @@ namespace WinFormsDisciplinas
                 output = false;
             }
             return output;
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -70,25 +72,48 @@ namespace WinFormsDisciplinas
 
             if (disciplinaAApagar != null)
             {
-                foreach(Disciplina disciplina in Disciplinas)
+                foreach (Disciplina disciplina in Disciplinas)
                 {
-                    apagada = disciplina;
+                    if(disciplinaAApagar.Id == disciplina.Id)
+                    {
+                        apagada = disciplina;                    }
                 }
             }
 
             if (apagada != null)
             {
                 DialogResult resposta;
-                resposta = MessageBox.Show($"Tem certeza que pretende apagar a disciplina: {apagada.Nome}", 
+                resposta = MessageBox.Show($"Tem certeza que pretende apagar a disciplina: {apagada.Nome}",
                     "Apagar",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                if(DialogResult.OK == resposta)
+                if (DialogResult.OK == resposta)
                 {
                     Disciplinas.Remove(apagada);
                     InitLista();
                 }
             }
+        }
+
+        private void btnEditarDisciplina_Click(object sender, EventArgs e)
+        {
+            Disciplina disciplinaAEditar = (Disciplina)DisciplinaListBox.SelectedItem;
+            Disciplina editada = null;
+
+            if(disciplinaAEditar != null)
+            {
+                foreach(Disciplina disciplina in Disciplinas)
+                {
+                   if(disciplinaAEditar.Id == disciplina.Id)
+                    {
+                        editada = disciplina;
+                    }
+                }
+            }
+
+            //abrir form Editar
+            EditarDisciplinaForm editarDisciplinaForm = new EditarDisciplinaForm(this, editada);
+            editarDisciplinaForm.Show();
         }
     }
 }

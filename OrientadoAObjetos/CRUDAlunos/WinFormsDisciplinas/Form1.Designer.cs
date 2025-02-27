@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             txtNomeDisciplina = new TextBox();
-            txtIDisciplina = new TextBox();
-            btnEditarDisciplina = new Button();
+            txtIdDisciplina = new TextBox();
+            EditarDisciplina = new Button();
             btnApagarDisciplina = new Button();
             DisciplinaListBox = new ListBox();
             btnGuardar = new Button();
@@ -44,30 +44,31 @@
             txtNomeDisciplina.Size = new Size(644, 26);
             txtNomeDisciplina.TabIndex = 3;
             // 
-            // txtIDisciplina
+            // txtIdDisciplina
             // 
-            txtIDisciplina.Enabled = false;
-            txtIDisciplina.Location = new Point(46, 56);
-            txtIDisciplina.Name = "txtIDisciplina";
-            txtIDisciplina.Size = new Size(263, 26);
-            txtIDisciplina.TabIndex = 2;
+            txtIdDisciplina.Enabled = false;
+            txtIdDisciplina.Location = new Point(46, 56);
+            txtIdDisciplina.Name = "txtIdDisciplina";
+            txtIdDisciplina.Size = new Size(263, 26);
+            txtIdDisciplina.TabIndex = 2;
             // 
-            // btnEditarDisciplina
+            // EditarDisciplina
             // 
-            btnEditarDisciplina.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditarDisciplina.Location = new Point(744, 343);
-            btnEditarDisciplina.Name = "btnEditarDisciplina";
-            btnEditarDisciplina.Size = new Size(222, 53);
-            btnEditarDisciplina.TabIndex = 15;
-            btnEditarDisciplina.Text = "Editar disciplina selecionada";
-            btnEditarDisciplina.UseVisualStyleBackColor = true;
+            EditarDisciplina.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            EditarDisciplina.Location = new Point(744, 343);
+            EditarDisciplina.Name = "EditarDisciplina";
+            EditarDisciplina.Size = new Size(222, 72);
+            EditarDisciplina.TabIndex = 15;
+            EditarDisciplina.Text = "Editar disciplina selecionada";
+            EditarDisciplina.UseVisualStyleBackColor = true;
+            EditarDisciplina.Click += btnEditarDisciplina_Click;
             // 
             // btnApagarDisciplina
             // 
             btnApagarDisciplina.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnApagarDisciplina.Location = new Point(744, 259);
             btnApagarDisciplina.Name = "btnApagarDisciplina";
-            btnApagarDisciplina.Size = new Size(222, 68);
+            btnApagarDisciplina.Size = new Size(222, 78);
             btnApagarDisciplina.TabIndex = 14;
             btnApagarDisciplina.Text = "Apagar disciplina selecionada";
             btnApagarDisciplina.UseVisualStyleBackColor = true;
@@ -78,7 +79,7 @@
             DisciplinaListBox.FormattingEnabled = true;
             DisciplinaListBox.Location = new Point(46, 259);
             DisciplinaListBox.Name = "DisciplinaListBox";
-            DisciplinaListBox.Size = new Size(648, 137);
+            DisciplinaListBox.Size = new Size(660, 156);
             DisciplinaListBox.TabIndex = 13;
             // 
             // btnGuardar
@@ -108,13 +109,13 @@
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1071, 526);
-            Controls.Add(btnEditarDisciplina);
+            Controls.Add(EditarDisciplina);
             Controls.Add(btnApagarDisciplina);
             Controls.Add(DisciplinaListBox);
             Controls.Add(btnGuardar);
             Controls.Add(btnCancelar);
             Controls.Add(txtNomeDisciplina);
-            Controls.Add(txtIDisciplina);
+            Controls.Add(txtIdDisciplina);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -124,8 +125,8 @@
         #endregion
 
         private TextBox txtNomeDisciplina;
-        private TextBox txtIDisciplina;
-        private Button btnEditarDisciplina;
+        private TextBox txtIdDisciplina;
+        private Button EditarDisciplina;
         private Button btnApagarDisciplina;
         private ListBox DisciplinaListBox;
         private Button btnGuardar;
