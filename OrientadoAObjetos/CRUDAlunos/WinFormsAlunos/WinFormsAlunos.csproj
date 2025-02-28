@@ -12,4 +12,10 @@
     <ProjectReference Include="..\Biblioteca\Biblioteca.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="EdiitarDisciplinaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

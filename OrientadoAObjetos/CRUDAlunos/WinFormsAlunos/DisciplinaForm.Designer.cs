@@ -1,14 +1,14 @@
-﻿namespace WinFormsDisciplinas
+﻿namespace WinFormsAlunos
 {
-    partial class Form1
+    partial class DisciplinaForm
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,53 +23,38 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            txtNomeDisciplina = new TextBox();
-            txtIdDisciplina = new TextBox();
-            btnEditarDisciplina = new Button();
+            EditarDisciplina = new Button();
             btnApagarDisciplina = new Button();
             DisciplinaListBox = new ListBox();
             btnGuardar = new Button();
             btnCancelar = new Button();
+            txtNomeDisciplina = new TextBox();
+            txtIdDisciplina = new TextBox();
             SuspendLayout();
             // 
-            // txtNomeDisciplina
+            // EditarDisciplina
             // 
-            txtNomeDisciplina.Location = new Point(46, 126);
-            txtNomeDisciplina.Name = "txtNomeDisciplina";
-            txtNomeDisciplina.Size = new Size(644, 26);
-            txtNomeDisciplina.TabIndex = 3;
-            // 
-            // txtIdDisciplina
-            // 
-            txtIdDisciplina.Enabled = false;
-            txtIdDisciplina.Location = new Point(46, 56);
-            txtIdDisciplina.Name = "txtIdDisciplina";
-            txtIdDisciplina.Size = new Size(263, 26);
-            txtIdDisciplina.TabIndex = 2;
-            // 
-            // btnEditarDisciplina
-            // 
-            btnEditarDisciplina.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditarDisciplina.Location = new Point(744, 343);
-            btnEditarDisciplina.Name = "btnEditarDisciplina";
-            btnEditarDisciplina.Size = new Size(222, 72);
-            btnEditarDisciplina.TabIndex = 15;
-            btnEditarDisciplina.Text = "Editar disciplina selecionada";
-            btnEditarDisciplina.UseVisualStyleBackColor = true;
-            btnEditarDisciplina.Click += btnEditarDisciplina_Click;
+            EditarDisciplina.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            EditarDisciplina.Location = new Point(723, 338);
+            EditarDisciplina.Name = "EditarDisciplina";
+            EditarDisciplina.Size = new Size(222, 72);
+            EditarDisciplina.TabIndex = 22;
+            EditarDisciplina.Text = "Editar disciplina selecionada";
+            EditarDisciplina.UseVisualStyleBackColor = true;
+            EditarDisciplina.Click += EditarDisciplina_Click;
             // 
             // btnApagarDisciplina
             // 
             btnApagarDisciplina.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnApagarDisciplina.Location = new Point(744, 259);
+            btnApagarDisciplina.Location = new Point(723, 254);
             btnApagarDisciplina.Name = "btnApagarDisciplina";
             btnApagarDisciplina.Size = new Size(222, 78);
-            btnApagarDisciplina.TabIndex = 14;
+            btnApagarDisciplina.TabIndex = 21;
             btnApagarDisciplina.Text = "Apagar disciplina selecionada";
             btnApagarDisciplina.UseVisualStyleBackColor = true;
             btnApagarDisciplina.Click += btnApagarDisciplina_Click;
@@ -77,18 +62,18 @@
             // DisciplinaListBox
             // 
             DisciplinaListBox.FormattingEnabled = true;
-            DisciplinaListBox.Location = new Point(97, 259);
+            DisciplinaListBox.Location = new Point(25, 254);
             DisciplinaListBox.Name = "DisciplinaListBox";
             DisciplinaListBox.Size = new Size(660, 156);
-            DisciplinaListBox.TabIndex = 13;
+            DisciplinaListBox.TabIndex = 20;
             // 
             // btnGuardar
             // 
             btnGuardar.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.Location = new Point(428, 169);
+            btnGuardar.Location = new Point(407, 164);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(112, 67);
-            btnGuardar.TabIndex = 12;
+            btnGuardar.TabIndex = 19;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
@@ -96,40 +81,55 @@
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(578, 169);
+            btnCancelar.Location = new Point(557, 164);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(112, 67);
-            btnCancelar.TabIndex = 11;
+            btnCancelar.TabIndex = 18;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // Form1
+            // txtNomeDisciplina
+            // 
+            txtNomeDisciplina.Location = new Point(25, 121);
+            txtNomeDisciplina.Name = "txtNomeDisciplina";
+            txtNomeDisciplina.Size = new Size(644, 26);
+            txtNomeDisciplina.TabIndex = 17;
+            // 
+            // txtIdDisciplina
+            // 
+            txtIdDisciplina.Enabled = false;
+            txtIdDisciplina.Location = new Point(25, 51);
+            txtIdDisciplina.Name = "txtIdDisciplina";
+            txtIdDisciplina.Size = new Size(263, 26);
+            txtIdDisciplina.TabIndex = 16;
+            // 
+            // DisciplinaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1071, 526);
-            Controls.Add(btnEditarDisciplina);
+            ClientSize = new Size(971, 461);
+            Controls.Add(EditarDisciplina);
             Controls.Add(btnApagarDisciplina);
             Controls.Add(DisciplinaListBox);
             Controls.Add(btnGuardar);
             Controls.Add(btnCancelar);
             Controls.Add(txtNomeDisciplina);
             Controls.Add(txtIdDisciplina);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "DisciplinaForm";
+            Text = "DisciplinaForm";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox txtNomeDisciplina;
-        private TextBox txtIdDisciplina;
-        private Button btnEditarDisciplina;
+        private Button EditarDisciplina;
         private Button btnApagarDisciplina;
         private ListBox DisciplinaListBox;
         private Button btnGuardar;
         private Button btnCancelar;
+        private TextBox txtNomeDisciplina;
+        private TextBox txtIdDisciplina;
     }
 }

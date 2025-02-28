@@ -1,13 +1,12 @@
-using Biblioteca;
-
-namespace WinFormsDisciplinas
+﻿using Biblioteca;
+using WinFormsDisciplinas;
+namespace WinFormsAlunos
 {
-    public partial class Form1 : Form
+    public partial class DisciplinaForm : Form
     {
         List<Disciplina> Disciplinas;
         int contaDisciplina = 1;
-
-        public Form1()
+        public DisciplinaForm()
         {
             Disciplinas = new List<Disciplina>();
             InitializeComponent();
@@ -40,12 +39,6 @@ namespace WinFormsDisciplinas
             txtIdDisciplina.Text = contaDisciplina.ToString();
         }
 
-        public void InitLista()
-        {
-            DisciplinaListBox.DataSource = null;        //limpa o interface 
-            DisciplinaListBox.DataSource = Disciplinas;  // associar lista ao DataSource da ListBox
-            DisciplinaListBox.DisplayMember = "Nome";
-        }
         private bool ValidaForm()
         {
             bool output = true;
@@ -58,9 +51,17 @@ namespace WinFormsDisciplinas
             return output;
         }
 
+        public void InitLista()
+        {
+            DisciplinaListBox.DataSource = null;        //limpa o interface 
+            DisciplinaListBox.DataSource = Disciplinas;  // associar lista ao DataSource da ListBox
+            DisciplinaListBox.DisplayMember = "Nome";
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             txtNomeDisciplina.Text = string.Empty;
+
         }
 
         private void btnApagarDisciplina_Click(object sender, EventArgs e)
@@ -73,9 +74,10 @@ namespace WinFormsDisciplinas
             {
                 foreach (Disciplina disciplina in Disciplinas)
                 {
-                    if(disciplinaAApagar.Id == disciplina.Id)
+                    if (disciplinaAApagar.Id == disciplina.Id)
                     {
-                        apagada = disciplina;                    }
+                        apagada = disciplina;
+                    }
                 }
             }
 
@@ -94,16 +96,16 @@ namespace WinFormsDisciplinas
             }
         }
 
-        private void btnEditarDisciplina_Click(object sender, EventArgs e)
+        private void EditarDisciplina_Click(object sender, EventArgs e)
         {
             Disciplina disciplinaAEditar = (Disciplina)DisciplinaListBox.SelectedItem;
             Disciplina editada = null;
 
-            if(disciplinaAEditar != null)
+            if (disciplinaAEditar != null)
             {
-                foreach(Disciplina disciplina in Disciplinas)
+                foreach (Disciplina disciplina in Disciplinas)
                 {
-                   if(disciplinaAEditar.Id == disciplina.Id)
+                    if (disciplinaAEditar.Id == disciplina.Id)
                     {
                         editada = disciplina;
                     }
@@ -113,6 +115,7 @@ namespace WinFormsDisciplinas
             //abrir form Editar
             EditarDisciplinaForm editarDisciplinaForm = new EditarDisciplinaForm(this, editada);
             editarDisciplinaForm.Show();
+        
         }
     }
 }
