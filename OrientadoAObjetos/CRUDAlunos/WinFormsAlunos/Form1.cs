@@ -9,7 +9,7 @@ namespace WinFormsAlunos
         List<Aluno> Alunos;
         int contaAlunos = 1;
 
-        public Form1()
+        public Form1(Aluno aluno)
         {
             Alunos = new List<Aluno>();  //instancializa uma lista vazia
             InitializeComponent();

@@ -1,5 +1,4 @@
 ﻿using Biblioteca;
-using System.Windows.Forms;
 using WinFormsAlunos;
 
 namespace WinFormsDisciplinas
@@ -28,7 +27,7 @@ namespace WinFormsDisciplinas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(ValidarForm())
+            if (ValidarForm())
             {
                 _editada.Nome = txtNomeDisciplina.Text;
                 _form.InitLista();
