@@ -6,9 +6,10 @@ namespace WinFormsAlunos
     {
         List<Disciplina> Disciplinas;
         int contaDisciplina = 1;
-        public DisciplinaForm()
+        public DisciplinaForm(List<Disciplina> disciplinas)
         {
-            Disciplinas = new List<Disciplina>();
+            //Disciplinas = new List<Disciplina>();
+            Disciplinas = disciplinas;
             InitializeComponent();
             txtIdDisciplina.Text = contaDisciplina.ToString();
         }

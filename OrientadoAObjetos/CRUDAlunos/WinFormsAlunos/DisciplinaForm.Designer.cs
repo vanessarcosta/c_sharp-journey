@@ -35,6 +35,8 @@
             btnCancelar = new Button();
             txtNomeDisciplina = new TextBox();
             txtIdDisciplina = new TextBox();
+            label3 = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // EditarDisciplina
@@ -91,24 +93,46 @@
             // 
             // txtNomeDisciplina
             // 
-            txtNomeDisciplina.Location = new Point(25, 121);
+            txtNomeDisciplina.Location = new Point(210, 121);
             txtNomeDisciplina.Name = "txtNomeDisciplina";
-            txtNomeDisciplina.Size = new Size(644, 26);
+            txtNomeDisciplina.Size = new Size(438, 26);
             txtNomeDisciplina.TabIndex = 17;
             // 
             // txtIdDisciplina
             // 
             txtIdDisciplina.Enabled = false;
-            txtIdDisciplina.Location = new Point(25, 51);
+            txtIdDisciplina.Location = new Point(210, 38);
             txtIdDisciplina.Name = "txtIdDisciplina";
             txtIdDisciplina.Size = new Size(263, 26);
             txtIdDisciplina.TabIndex = 16;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(25, 36);
+            label3.Name = "label3";
+            label3.Size = new Size(145, 25);
+            label3.TabIndex = 23;
+            label3.Text = "Id da disciplina:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(25, 119);
+            label1.Name = "label1";
+            label1.Size = new Size(179, 25);
+            label1.TabIndex = 24;
+            label1.Text = "Nome da disciplina:";
             // 
             // DisciplinaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(971, 461);
+            Controls.Add(label1);
+            Controls.Add(label3);
             Controls.Add(EditarDisciplina);
             Controls.Add(btnApagarDisciplina);
             Controls.Add(DisciplinaListBox);
@@ -131,5 +155,7 @@
         private Button btnCancelar;
         private TextBox txtNomeDisciplina;
         private TextBox txtIdDisciplina;
+        private Label label3;
+        private Label label1;
     }
 }

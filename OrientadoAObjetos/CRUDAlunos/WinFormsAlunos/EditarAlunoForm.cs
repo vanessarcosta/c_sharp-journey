@@ -8,11 +8,16 @@ namespace WinFormsAlunos
         Aluno _editado;
 
         Form1 _form;
-        public EditarAlunoForm(Form1 form, Aluno editado)
+
+        List<Disciplina> Disciplinas;
+        
+        public EditarAlunoForm(Form1 form, Aluno editado, List<Disciplina> disciplinas)
         {
             InitializeComponent();
             _editado = editado;
             _form = form;
+            Disciplinas = disciplinas;
+          
             txtIdAluno.Text = editado.Id.ToString();
             txtNomeAluno.Text = editado.Nome;
             txtApelido.Text = editado.Apelido;
@@ -26,7 +31,7 @@ namespace WinFormsAlunos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (ValidaForm())
-            { 
+            {
                 _editado.Nome = txtNomeAluno.Text;
                 _editado.Apelido = txtApelido.Text;
                 _form.InitLista();
@@ -51,6 +56,12 @@ namespace WinFormsAlunos
             }
 
             return output;
+        }
+
+        private void btnIncricao_Click(object sender, EventArgs e)
+        {
+            FrmInscricao frmInscricao = new FrmInscricao(_form, _editado, Disciplinas);
+            frmInscricao.Show();
         }
     }
 }

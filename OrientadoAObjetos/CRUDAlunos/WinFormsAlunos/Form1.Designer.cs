@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lbl = new Label();
             txtIdAluno = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -39,17 +38,8 @@
             AlunosListBox = new ListBox();
             btnApagarAluno = new Button();
             btnEditarAluno = new Button();
+            lbl = new Label();
             SuspendLayout();
-            // 
-            // lbl
-            // 
-            lbl.AutoSize = true;
-            lbl.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl.Location = new Point(88, 94);
-            lbl.Name = "lbl";
-            lbl.Size = new Size(113, 25);
-            lbl.TabIndex = 0;
-            lbl.Text = "Id de aluno:";
             // 
             // txtIdAluno
             // 
@@ -145,6 +135,16 @@
             btnEditarAluno.UseVisualStyleBackColor = true;
             btnEditarAluno.Click += btnEditarAluno_Click;
             // 
+            // lbl
+            // 
+            lbl.AutoSize = true;
+            lbl.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl.Location = new Point(88, 94);
+            lbl.Name = "lbl";
+            lbl.Size = new Size(113, 25);
+            lbl.TabIndex = 0;
+            lbl.Text = "Id de aluno:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
@@ -168,8 +168,6 @@
         }
 
         #endregion
-
-        private Label lbl;
         private TextBox txtIdAluno;
         private Label label1;
         private Label label2;
@@ -180,5 +178,6 @@
         private ListBox AlunosListBox;
         private Button btnApagarAluno;
         private Button btnEditarAluno;
+        private Label lbl;
     }
 }
