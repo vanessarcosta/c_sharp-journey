@@ -6,6 +6,7 @@ namespace WinFormsAlunos
     {
         List<Aluno> alunos = new List<Aluno>();
         List<Disciplina> disciplinas = new List<Disciplina>();
+
         public FrmPrincipal()
         {
             InitializeComponent();
