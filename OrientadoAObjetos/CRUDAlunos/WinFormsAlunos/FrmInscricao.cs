@@ -3,23 +3,17 @@ namespace WinFormsAlunos
 {
     public partial class FrmInscricao : Form
     {
-        Form1 _form;
         Aluno _inscrito;
 
-        List<Disciplina> Disciplinas;
-        List<Disciplina> DisciplinasDisponiveis;
-        List<Disciplina> DisciplinasInscritas;
+        private List<Disciplina> DisciplinasDisponiveis;
 
-        public FrmInscricao(Form1 form, Aluno inscrito, List<Disciplina> disciplinas)
+        public FrmInscricao(Aluno inscrito, List<Disciplina> listaDisciplinas)
         {
             InitializeComponent();
             _inscrito = inscrito;
-            _form = form;
-            //recebe no parametro e faço uma cópia abaixo
-            Disciplinas = disciplinas;
-            DisciplinasDisponiveis = new List<Disciplina>(Disciplinas);
 
-            DisciplinasInscritas = new List<Disciplina>();
+            DisciplinasDisponiveis = new List<Disciplina>(listaDisciplinas);
+            _inscrito.DisciplinasInscritas = new List<Disciplina>();
 
             txtIdAluno.Text = inscrito.Id.ToString();
             txtNomeAluno.Text = inscrito.Nome;
@@ -35,9 +29,8 @@ namespace WinFormsAlunos
             DisciplinasListBox.DisplayMember = "Nome";
 
             DisciplinasIncritasListBox.DataSource = null;
-            DisciplinasIncritasListBox.DataSource = DisciplinasInscritas;
+            DisciplinasIncritasListBox.DataSource = _inscrito.DisciplinasInscritas;
             DisciplinasIncritasListBox.DisplayMember = "Nome";
-
         }
 
         private void btnMatricular_Click(object sender, EventArgs e)
@@ -47,7 +40,7 @@ namespace WinFormsAlunos
             if (disciplinaSelecionada != null)
             {
                 DisciplinasDisponiveis.Remove(disciplinaSelecionada);
-                DisciplinasInscritas.Add(disciplinaSelecionada);
+                _inscrito.DisciplinasInscritas.Add(disciplinaSelecionada);
                 AtualizarListas();
             }
         }
@@ -58,7 +51,7 @@ namespace WinFormsAlunos
 
             if (disciplinaSelecionada != null)
             {
-                DisciplinasInscritas.Remove(disciplinaSelecionada);
+                _inscrito.DisciplinasInscritas.Remove(disciplinaSelecionada);
                 DisciplinasDisponiveis.Add(disciplinaSelecionada);
                 AtualizarListas();
             }

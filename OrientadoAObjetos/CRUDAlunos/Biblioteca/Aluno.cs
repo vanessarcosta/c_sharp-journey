@@ -8,6 +8,7 @@
 
         public string Apelido { get; set; }
 
+        public List<Disciplina> DisciplinasInscritas { get; set; }
         public string NomeCompleto
         {
             get

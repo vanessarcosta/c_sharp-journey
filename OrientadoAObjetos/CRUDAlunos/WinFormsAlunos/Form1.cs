@@ -8,22 +8,15 @@ namespace WinFormsAlunos
         //Não esquecer de qdo criar a lista add a referencia da Biblio -- fazer manual ou ctrl + .
         List<Aluno> Alunos;
         int contaAlunos = 1;
-        List<Disciplina> Disciplinas;
+        List<Disciplina> listaDisciplinas;
 
         public Form1(List<Disciplina> disciplinas)
         {
             InitializeComponent();
             txtIdAluno.Text = contaAlunos.ToString();
             Alunos = new List<Aluno>();
-            Disciplinas = disciplinas;
+            listaDisciplinas = disciplinas;
         }
-
-        //public Form1(Aluno aluno) 
-        //{
-        //InitializeComponent();
-        //txtIdAluno.Text = contaAlunos.ToString();
-        //    Alunos = new List<Aluno>();  //instancializa uma lista vazia
-        //}
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -134,8 +127,29 @@ namespace WinFormsAlunos
                 }
 
                 //abrir a nova form para editar
-                EditarAlunoForm editarAlunoForm = new EditarAlunoForm(this, editado, Disciplinas);
+                EditarAlunoForm editarAlunoForm = new EditarAlunoForm(this, editado);
                 editarAlunoForm.Show();
+            }
+        }
+
+        private void btnInscricao_Click(object sender, EventArgs e)
+        {
+            Aluno alunoAInscrever = (Aluno)AlunosListBox.SelectedItem;
+            Aluno inscrito = null;
+
+            if (alunoAInscrever != null)
+            {
+                foreach (Aluno aluno in Alunos)
+                {
+                    if (alunoAInscrever.Id == aluno.Id)
+                    {
+                        inscrito = aluno;
+                    }
+                }
+
+                //abrir a nova form para editar
+                FrmInscricao frmInscricao = new FrmInscricao(inscrito, listaDisciplinas);
+                frmInscricao.Show();
             }
         }
     }

@@ -33,7 +33,6 @@
             txtApelido = new TextBox();
             btnCancelar = new Button();
             btnGuardar = new Button();
-            btnIncricao = new Button();
             label2 = new Label();
             label1 = new Label();
             label3 = new Label();
@@ -83,17 +82,6 @@
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
-            // btnIncricao
-            // 
-            btnIncricao.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnIncricao.Location = new Point(466, 277);
-            btnIncricao.Name = "btnIncricao";
-            btnIncricao.Size = new Size(105, 61);
-            btnIncricao.TabIndex = 5;
-            btnIncricao.Text = "Inscrições";
-            btnIncricao.UseVisualStyleBackColor = true;
-            btnIncricao.Click += btnIncricao_Click;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -132,7 +120,6 @@
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(label2);
-            Controls.Add(btnIncricao);
             Controls.Add(btnGuardar);
             Controls.Add(btnCancelar);
             Controls.Add(txtApelido);
@@ -151,7 +138,6 @@
         private TextBox txtApelido;
         private Button btnCancelar;
         private Button btnGuardar;
-        private Button btnIncricao;
         private Label label2;
         private Label label1;
         private Label label3;

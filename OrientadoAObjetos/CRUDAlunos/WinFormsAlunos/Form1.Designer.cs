@@ -36,9 +36,10 @@
             btnCancelar = new Button();
             btnGuardar = new Button();
             AlunosListBox = new ListBox();
-            btnApagarAluno = new Button();
             btnEditarAluno = new Button();
             lbl = new Label();
+            btnApagarAluno = new Button();
+            btnInscricao = new Button();
             SuspendLayout();
             // 
             // txtIdAluno
@@ -113,17 +114,6 @@
             AlunosListBox.Size = new Size(836, 156);
             AlunosListBox.TabIndex = 8;
             // 
-            // btnApagarAluno
-            // 
-            btnApagarAluno.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnApagarAluno.Location = new Point(964, 366);
-            btnApagarAluno.Name = "btnApagarAluno";
-            btnApagarAluno.Size = new Size(222, 67);
-            btnApagarAluno.TabIndex = 9;
-            btnApagarAluno.Text = "Apagar aluno selecionado";
-            btnApagarAluno.UseVisualStyleBackColor = true;
-            btnApagarAluno.Click += btnApagarAluno_Click;
-            // 
             // btnEditarAluno
             // 
             btnEditarAluno.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -145,11 +135,34 @@
             lbl.TabIndex = 0;
             lbl.Text = "Id de aluno:";
             // 
+            // btnApagarAluno
+            // 
+            btnApagarAluno.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnApagarAluno.Location = new Point(964, 366);
+            btnApagarAluno.Name = "btnApagarAluno";
+            btnApagarAluno.Size = new Size(222, 67);
+            btnApagarAluno.TabIndex = 9;
+            btnApagarAluno.Text = "Apagar aluno selecionado";
+            btnApagarAluno.UseVisualStyleBackColor = true;
+            btnApagarAluno.Click += btnApagarAluno_Click;
+            // 
+            // btnInscricao
+            // 
+            btnInscricao.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInscricao.Location = new Point(964, 280);
+            btnInscricao.Name = "btnInscricao";
+            btnInscricao.Size = new Size(222, 67);
+            btnInscricao.TabIndex = 11;
+            btnInscricao.Text = "Inscrições";
+            btnInscricao.UseVisualStyleBackColor = true;
+            btnInscricao.Click += btnInscricao_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1215, 572);
+            Controls.Add(btnInscricao);
             Controls.Add(btnEditarAluno);
             Controls.Add(btnApagarAluno);
             Controls.Add(AlunosListBox);
@@ -176,8 +189,9 @@
         private Button btnCancelar;
         private Button btnGuardar;
         private ListBox AlunosListBox;
-        private Button btnApagarAluno;
         private Button btnEditarAluno;
         private Label lbl;
+        private Button btnApagarAluno;
+        private Button btnInscricao;
     }
 }

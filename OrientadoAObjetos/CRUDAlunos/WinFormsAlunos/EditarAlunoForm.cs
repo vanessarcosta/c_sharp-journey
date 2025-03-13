@@ -4,19 +4,15 @@ namespace WinFormsAlunos
 {
     public partial class EditarAlunoForm : Form
     {
-
         Aluno _editado;
 
         Form1 _form;
 
-        List<Disciplina> Disciplinas;
-        
-        public EditarAlunoForm(Form1 form, Aluno editado, List<Disciplina> disciplinas)
+        public EditarAlunoForm(Form1 form, Aluno editado)
         {
             InitializeComponent();
             _editado = editado;
             _form = form;
-            Disciplinas = disciplinas;
           
             txtIdAluno.Text = editado.Id.ToString();
             txtNomeAluno.Text = editado.Nome;
@@ -56,12 +52,6 @@ namespace WinFormsAlunos
             }
 
             return output;
-        }
-
-        private void btnIncricao_Click(object sender, EventArgs e)
-        {
-            FrmInscricao frmInscricao = new FrmInscricao(_form, _editado, Disciplinas);
-            frmInscricao.Show();
         }
     }
 }

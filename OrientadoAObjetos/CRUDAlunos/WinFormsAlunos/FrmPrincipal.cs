@@ -4,23 +4,25 @@ namespace WinFormsAlunos
 {
     public partial class FrmPrincipal : Form
     {
-        List<Aluno> alunos = new List<Aluno>();
-        List<Disciplina> disciplinas = new List<Disciplina>();
+        public List<Aluno> listaAlunos { get; private set; }
+        public List<Disciplina> listaDisciplinas {  get; private set; }
 
         public FrmPrincipal()
         {
             InitializeComponent();
+            listaAlunos = new List<Aluno>();
+            listaDisciplinas = new List<Disciplina>();
         }
 
         private void toolStripMenuItemAluno_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1(disciplinas);
+            Form1 form1 = new Form1(listaDisciplinas);
             form1.Show();
         }
 
         private void toolStripMenuItemDisciplina_Click(object sender, EventArgs e)
         {
-            DisciplinaForm disciplinaForm = new DisciplinaForm(disciplinas);
+            DisciplinaForm disciplinaForm = new DisciplinaForm(listaDisciplinas);
             disciplinaForm.Show();
         }
     }
