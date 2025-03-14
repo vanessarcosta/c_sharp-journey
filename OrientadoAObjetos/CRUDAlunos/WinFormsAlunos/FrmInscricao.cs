@@ -12,9 +12,35 @@ namespace WinFormsAlunos
             InitializeComponent();
             _inscrito = inscrito;
 
-            DisciplinasDisponiveis = new List<Disciplina>(listaDisciplinas);
-            _inscrito.DisciplinasInscritas = new List<Disciplina>();
+            if (_inscrito.DisciplinasInscritas == null)
+            {
+                _inscrito.DisciplinasInscritas = new List<Disciplina>();
+                DisciplinasDisponiveis = new List<Disciplina>(listaDisciplinas);
+            }
+            else
+            {
+                DisciplinasDisponiveis = new List<Disciplina>(listaDisciplinas);
 
+                foreach (Disciplina disciplina in listaDisciplinas)
+                {
+                    // verifico se o aluno já está inscrito
+                    bool verificaInscricao = false; 
+                 
+                    foreach (Disciplina inscrita in _inscrito.DisciplinasInscritas)
+                    {
+                        // se for igual  o aluno já está inscrito
+                        if (inscrita.Id == disciplina.Id)
+                        {
+                            verificaInscricao = true;
+                        }
+                    }
+
+                    if (verificaInscricao == true)
+                    {
+                        DisciplinasDisponiveis.Remove(disciplina);
+                    }
+                }
+            }
             txtIdAluno.Text = inscrito.Id.ToString();
             txtNomeAluno.Text = inscrito.Nome;
             txtApelido.Text = inscrito.Apelido;
