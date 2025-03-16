@@ -67,6 +67,8 @@
             MainMenuStrip = menuStrip1;
             Name = "FrmPrincipal";
             Text = "FrmPrincipal";
+            FormClosing += FrmPrincipal_FormClosing;
+            Load += FrmPrincipal_Load_1;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

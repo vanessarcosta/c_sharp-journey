@@ -6,15 +6,17 @@ namespace WinFormsAlunos
     {
         //Defini o atributo não cria o objeto , depois tem que instanciar no construtor
         //Não esquecer de qdo criar a lista add a referencia da Biblio -- fazer manual ou ctrl + .
-        List<Aluno> Alunos;
-        int contaAlunos = 1;
+        List<Aluno> listaAlunos;
+        int contaAlunos;
         List<Disciplina> listaDisciplinas;
+        private const string caminhoAlunos = "alunos.xml";
+
 
         public Form1(List<Disciplina> disciplinas)
         {
             InitializeComponent();
             txtIdAluno.Text = contaAlunos.ToString();
-            Alunos = new List<Aluno>();
+            listaAlunos = new List<Aluno>();
             listaDisciplinas = disciplinas;
         }
 
@@ -31,7 +33,7 @@ namespace WinFormsAlunos
                     Apelido = txtApelidoAluno.Text,
                 };
 
-                Alunos.Add(novoAluno);
+                listaAlunos.Add(novoAluno);
                 contaAlunos++;
 
                 InitLista();
@@ -49,7 +51,7 @@ namespace WinFormsAlunos
         public void InitLista()
         {
             AlunosListBox.DataSource = null;
-            AlunosListBox.DataSource = Alunos;
+            AlunosListBox.DataSource = listaAlunos;
             AlunosListBox.DisplayMember = "NomeCompleto";
         }
 
@@ -86,7 +88,7 @@ namespace WinFormsAlunos
 
             if (alunoAApagar != null)
             {
-                foreach (Aluno aluno in Alunos)
+                foreach (Aluno aluno in listaAlunos)
                 {
                     if (alunoAApagar.Id == aluno.Id)
                     {
@@ -104,7 +106,7 @@ namespace WinFormsAlunos
 
                     if (DialogResult.OK == resposta)
                     {
-                        Alunos.Remove(apagado);
+                        listaAlunos.Remove(apagado);
                         InitLista();
                     }
                 }
@@ -118,7 +120,7 @@ namespace WinFormsAlunos
 
             if (alunoAEditar != null)
             {
-                foreach (Aluno aluno in Alunos)
+                foreach (Aluno aluno in listaAlunos)
                 {
                     if (alunoAEditar.Id == aluno.Id)
                     {
@@ -139,7 +141,7 @@ namespace WinFormsAlunos
 
             if (alunoAInscrever != null)
             {
-                foreach (Aluno aluno in Alunos)
+                foreach (Aluno aluno in listaAlunos)
                 {
                     if (alunoAInscrever.Id == aluno.Id)
                     {
@@ -150,6 +152,39 @@ namespace WinFormsAlunos
                 //abrir a nova form para editar
                 FrmInscricao frmInscricao = new FrmInscricao(inscrito, listaDisciplinas);
                 frmInscricao.Show();
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (listaAlunos != null)
+                GestaoDeArquivos.GravarInfoAluno(listaAlunos, caminhoAlunos);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (File.Exists(caminhoAlunos))
+            {
+                listaAlunos = GestaoDeArquivos.LerInfoDoAluno(caminhoAlunos);
+                foreach (Aluno aluno in listaAlunos)
+                {
+                    InitLista();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não tem nenhum aluno cadastrado.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (listaAlunos.Count > 1)
+            {
+                int proximoId = listaAlunos.Max(a => a.Id) + 1;
+                txtIdAluno.Text = proximoId.ToString();
+                contaAlunos = proximoId;
+            }
+            else
+            {
+                txtIdAluno.Text = "1";
+                contaAlunos = 1;
             }
         }
     }
