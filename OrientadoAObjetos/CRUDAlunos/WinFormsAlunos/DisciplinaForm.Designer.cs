@@ -142,6 +142,8 @@
             Controls.Add(txtIdDisciplina);
             Name = "DisciplinaForm";
             Text = "DisciplinaForm";
+            FormClosing += DisciplinaForm_FormClosing;
+            Load += DisciplinaForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

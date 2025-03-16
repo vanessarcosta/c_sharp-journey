@@ -6,6 +6,7 @@ namespace WinFormsAlunos
         Aluno _inscrito;
 
         private List<Disciplina> DisciplinasDisponiveis;
+        private const string caminhoDisciplinaInscritas = new ""
 
         public FrmInscricao(Aluno inscrito, List<Disciplina> listaDisciplinas)
         {

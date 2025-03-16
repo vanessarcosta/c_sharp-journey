@@ -4,13 +4,15 @@ namespace WinFormsAlunos
 {
     public partial class DisciplinaForm : Form
     {
-        List<Disciplina> Disciplinas;
-        int contaDisciplina = 1;
-        public DisciplinaForm(List<Disciplina> disciplinas)
+        private const string caminhoDisciplinas = "disciplinas.xml";
+
+        List<Disciplina> listaDisciplinas;
+        int contaDisciplinas = 1;
+        public DisciplinaForm()
         {
-            Disciplinas = disciplinas;
             InitializeComponent();
-            txtIdDisciplina.Text = contaDisciplina.ToString();
+            listaDisciplinas = new List<Disciplina>();
+            txtIdDisciplina.Text = contaDisciplinas.ToString();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -22,12 +24,12 @@ namespace WinFormsAlunos
                 //construi o objeto
                 novaDisciplina = new Disciplina
                 {
-                    Id = contaDisciplina,
+                    Id = contaDisciplinas,
                     Nome = txtNomeDisciplina.Text,
                 };
 
-                Disciplinas.Add(novaDisciplina);
-                contaDisciplina++;
+                listaDisciplinas.Add(novaDisciplina);
+                contaDisciplinas++;
 
                 InitLista();
             }
@@ -36,7 +38,7 @@ namespace WinFormsAlunos
                 MessageBox.Show("Preencha corretamente os dados e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             txtNomeDisciplina.Text = string.Empty;
-            txtIdDisciplina.Text = contaDisciplina.ToString();
+            txtIdDisciplina.Text = contaDisciplinas.ToString();
         }
 
         private bool ValidaForm()
@@ -54,7 +56,7 @@ namespace WinFormsAlunos
         public void InitLista()
         {
             DisciplinaListBox.DataSource = null;        //limpa o interface 
-            DisciplinaListBox.DataSource = Disciplinas;  // associar lista ao DataSource da ListBox
+            DisciplinaListBox.DataSource = listaDisciplinas;  // associar lista ao DataSource da ListBox
             DisciplinaListBox.DisplayMember = "Nome";
         }
 
@@ -71,7 +73,7 @@ namespace WinFormsAlunos
 
             if (disciplinaAApagar != null)
             {
-                foreach (Disciplina disciplina in Disciplinas)
+                foreach (Disciplina disciplina in listaDisciplinas)
                 {
                     if (disciplinaAApagar.Id == disciplina.Id)
                     {
@@ -89,7 +91,7 @@ namespace WinFormsAlunos
 
                 if (DialogResult.OK == resposta)
                 {
-                    Disciplinas.Remove(apagada);
+                    listaDisciplinas.Remove(apagada);
                     InitLista();
                 }
             }
@@ -102,7 +104,7 @@ namespace WinFormsAlunos
 
             if (disciplinaAEditar != null)
             {
-                foreach (Disciplina disciplina in Disciplinas)
+                foreach (Disciplina disciplina in listaDisciplinas)
                 {
                     if (disciplinaAEditar.Id == disciplina.Id)
                     {
@@ -110,11 +112,38 @@ namespace WinFormsAlunos
                     }
                 }
             }
-
             //abrir form Editar
             EditarDisciplinaForm editarDisciplinaForm = new EditarDisciplinaForm(this, editada);
             editarDisciplinaForm.Show();
-        
+        }
+
+        private void DisciplinaForm_Load(object sender, EventArgs e)
+        {
+            if (File.Exists(caminhoDisciplinas))
+            {
+                listaDisciplinas = GestaoDeArquivos.LerInfoDasDisciplinas(caminhoDisciplinas);
+                foreach (Disciplina disciplina in listaDisciplinas)
+                {
+                    InitLista();
+                }
+            }
+            if (listaDisciplinas.Count > 1)
+            {
+                int proximoId = listaDisciplinas.Max(a => a.Id) + 1;
+                txtIdDisciplina.Text = proximoId.ToString();
+                contaDisciplinas = proximoId;
+            }
+            else
+            {
+                txtIdDisciplina.Text = "1";
+                contaDisciplinas = 1;
+            }
+        }
+
+        private void DisciplinaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (listaDisciplinas != null)
+                GestaoDeArquivos.GravarInfoDasDisciplinas(listaDisciplinas, caminhoDisciplinas);
         }
     }
 }

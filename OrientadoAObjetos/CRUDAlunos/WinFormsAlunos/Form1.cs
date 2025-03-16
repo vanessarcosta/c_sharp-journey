@@ -158,22 +158,18 @@ namespace WinFormsAlunos
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (listaAlunos != null)
-                GestaoDeArquivos.GravarInfoAluno(listaAlunos, caminhoAlunos);
+                GestaoDeArquivos.GravarInfoDosAlunos(listaAlunos, caminhoAlunos);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             if (File.Exists(caminhoAlunos))
             {
-                listaAlunos = GestaoDeArquivos.LerInfoDoAluno(caminhoAlunos);
+                listaAlunos = GestaoDeArquivos.LerInfoDosAlunos(caminhoAlunos);
                 foreach (Aluno aluno in listaAlunos)
                 {
                     InitLista();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Não tem nenhum aluno cadastrado.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             if (listaAlunos.Count > 1)
             {
