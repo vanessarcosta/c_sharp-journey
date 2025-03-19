@@ -40,54 +40,68 @@
             lbl = new Label();
             btnApagarAluno = new Button();
             btnInscricao = new Button();
+            panel1 = new Panel();
+            label3 = new Label();
+            pictureBox2 = new PictureBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // txtIdAluno
             // 
             txtIdAluno.Enabled = false;
-            txtIdAluno.Location = new Point(267, 94);
+            txtIdAluno.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            txtIdAluno.ForeColor = SystemColors.HotTrack;
+            txtIdAluno.Location = new Point(229, 132);
             txtIdAluno.Name = "txtIdAluno";
-            txtIdAluno.Size = new Size(179, 26);
+            txtIdAluno.Size = new Size(179, 31);
             txtIdAluno.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(88, 156);
+            label1.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.HotTrack;
+            label1.Location = new Point(50, 194);
             label1.Name = "label1";
-            label1.Size = new Size(148, 25);
+            label1.Size = new Size(158, 23);
             label1.TabIndex = 2;
             label1.Text = "Nome do aluno:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(88, 213);
+            label2.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.HotTrack;
+            label2.Location = new Point(50, 251);
             label2.Name = "label2";
-            label2.Size = new Size(163, 25);
+            label2.Size = new Size(176, 23);
             label2.TabIndex = 3;
             label2.Text = "Apelido do aluno:";
             // 
             // txtNomeAluno
             // 
-            txtNomeAluno.Location = new Point(267, 155);
+            txtNomeAluno.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            txtNomeAluno.ForeColor = SystemColors.HotTrack;
+            txtNomeAluno.Location = new Point(229, 193);
             txtNomeAluno.Name = "txtNomeAluno";
-            txtNomeAluno.Size = new Size(371, 26);
+            txtNomeAluno.Size = new Size(371, 31);
             txtNomeAluno.TabIndex = 4;
             // 
             // txtApelidoAluno
             // 
-            txtApelidoAluno.Location = new Point(267, 212);
+            txtApelidoAluno.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            txtApelidoAluno.ForeColor = SystemColors.HotTrack;
+            txtApelidoAluno.Location = new Point(229, 250);
             txtApelidoAluno.Name = "txtApelidoAluno";
-            txtApelidoAluno.Size = new Size(371, 26);
+            txtApelidoAluno.Size = new Size(371, 31);
             txtApelidoAluno.TabIndex = 5;
             // 
             // btnCancelar
             // 
-            btnCancelar.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(526, 280);
+            btnCancelar.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            btnCancelar.ForeColor = SystemColors.HotTrack;
+            btnCancelar.Location = new Point(488, 318);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(112, 67);
             btnCancelar.TabIndex = 6;
@@ -97,8 +111,9 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.Location = new Point(390, 280);
+            btnGuardar.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            btnGuardar.ForeColor = SystemColors.HotTrack;
+            btnGuardar.Location = new Point(352, 318);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(112, 67);
             btnGuardar.TabIndex = 7;
@@ -108,16 +123,20 @@
             // 
             // AlunosListBox
             // 
+            AlunosListBox.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            AlunosListBox.ForeColor = SystemColors.HotTrack;
             AlunosListBox.FormattingEnabled = true;
-            AlunosListBox.Location = new Point(88, 366);
+            AlunosListBox.ItemHeight = 23;
+            AlunosListBox.Location = new Point(50, 404);
             AlunosListBox.Name = "AlunosListBox";
-            AlunosListBox.Size = new Size(836, 156);
+            AlunosListBox.Size = new Size(836, 142);
             AlunosListBox.TabIndex = 8;
             // 
             // btnEditarAluno
             // 
-            btnEditarAluno.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditarAluno.Location = new Point(964, 455);
+            btnEditarAluno.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            btnEditarAluno.ForeColor = SystemColors.HotTrack;
+            btnEditarAluno.Location = new Point(926, 493);
             btnEditarAluno.Name = "btnEditarAluno";
             btnEditarAluno.Size = new Size(222, 65);
             btnEditarAluno.TabIndex = 10;
@@ -128,17 +147,19 @@
             // lbl
             // 
             lbl.AutoSize = true;
-            lbl.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl.Location = new Point(88, 94);
+            lbl.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            lbl.ForeColor = SystemColors.HotTrack;
+            lbl.Location = new Point(50, 132);
             lbl.Name = "lbl";
-            lbl.Size = new Size(113, 25);
+            lbl.Size = new Size(120, 23);
             lbl.TabIndex = 0;
             lbl.Text = "Id de aluno:";
             // 
             // btnApagarAluno
             // 
-            btnApagarAluno.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnApagarAluno.Location = new Point(964, 366);
+            btnApagarAluno.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            btnApagarAluno.ForeColor = SystemColors.HotTrack;
+            btnApagarAluno.Location = new Point(926, 404);
             btnApagarAluno.Name = "btnApagarAluno";
             btnApagarAluno.Size = new Size(222, 67);
             btnApagarAluno.TabIndex = 9;
@@ -148,8 +169,9 @@
             // 
             // btnInscricao
             // 
-            btnInscricao.Font = new Font("Segoe UI", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInscricao.Location = new Point(964, 280);
+            btnInscricao.Font = new Font("Century Gothic", 11.8956518F, FontStyle.Bold);
+            btnInscricao.ForeColor = SystemColors.HotTrack;
+            btnInscricao.Location = new Point(926, 318);
             btnInscricao.Name = "btnInscricao";
             btnInscricao.Size = new Size(222, 67);
             btnInscricao.TabIndex = 11;
@@ -157,11 +179,44 @@
             btnInscricao.UseVisualStyleBackColor = true;
             btnInscricao.Click += btnInscricao_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(0, 71, 160);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1215, 113);
+            panel1.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(497, 37);
+            label3.Name = "label3";
+            label3.Size = new Size(98, 30);
+            label3.TabIndex = 5;
+            label3.Text = "Alunos";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.icons8_escola_100__1_;
+            pictureBox2.Location = new Point(36, 14);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(142, 87);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1215, 572);
+            Controls.Add(panel1);
             Controls.Add(btnInscricao);
             Controls.Add(btnEditarAluno);
             Controls.Add(btnApagarAluno);
@@ -178,6 +233,9 @@
             Text = "Form1";
             FormClosing += Form1_FormClosing;
             Load += Form1_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,5 +253,8 @@
         private Label lbl;
         private Button btnApagarAluno;
         private Button btnInscricao;
+        private Panel panel1;
+        private Label label3;
+        private PictureBox pictureBox2;
     }
 }

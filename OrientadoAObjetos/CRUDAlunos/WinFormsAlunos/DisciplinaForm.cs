@@ -4,8 +4,7 @@ namespace WinFormsAlunos
 {
     public partial class DisciplinaForm : Form
     {
-        private const string caminhoDisciplinas = "disciplinas.xml";
-
+        private const string caminhoDisciplinas = "disciplinas.txt";
         List<Disciplina> listaDisciplinas;
         int contaDisciplinas = 1;
         public DisciplinaForm()
@@ -14,11 +13,9 @@ namespace WinFormsAlunos
             listaDisciplinas = new List<Disciplina>();
             txtIdDisciplina.Text = contaDisciplinas.ToString();
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Disciplina novaDisciplina;
-
             if (ValidaForm())
             {
                 //construi o objeto
@@ -27,10 +24,8 @@ namespace WinFormsAlunos
                     Id = contaDisciplinas,
                     Nome = txtNomeDisciplina.Text,
                 };
-
                 listaDisciplinas.Add(novaDisciplina);
                 contaDisciplinas++;
-
                 InitLista();
             }
             else
@@ -40,11 +35,9 @@ namespace WinFormsAlunos
             txtNomeDisciplina.Text = string.Empty;
             txtIdDisciplina.Text = contaDisciplinas.ToString();
         }
-
         private bool ValidaForm()
         {
             bool output = true;
-
             if (string.IsNullOrEmpty(txtNomeDisciplina.Text))
             {
                 MessageBox.Show("Insira o nome da disciplina ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -52,25 +45,20 @@ namespace WinFormsAlunos
             }
             return output;
         }
-
         public void InitLista()
         {
             DisciplinaListBox.DataSource = null;        //limpa o interface 
             DisciplinaListBox.DataSource = listaDisciplinas;  // associar lista ao DataSource da ListBox
             DisciplinaListBox.DisplayMember = "Nome";
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             txtNomeDisciplina.Text = string.Empty;
         }
-
         private void btnApagarDisciplina_Click(object sender, EventArgs e)
         {
             Disciplina disciplinaAApagar = (Disciplina)DisciplinaListBox.SelectedItem;
-
             Disciplina apagada = null;
-
             if (disciplinaAApagar != null)
             {
                 foreach (Disciplina disciplina in listaDisciplinas)
@@ -81,14 +69,12 @@ namespace WinFormsAlunos
                     }
                 }
             }
-
             if (apagada != null)
             {
                 DialogResult resposta;
                 resposta = MessageBox.Show($"Tem certeza que pretende apagar a disciplina: {apagada.Nome}",
                     "Apagar",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
                 if (DialogResult.OK == resposta)
                 {
                     listaDisciplinas.Remove(apagada);
@@ -96,12 +82,10 @@ namespace WinFormsAlunos
                 }
             }
         }
-
         private void EditarDisciplina_Click(object sender, EventArgs e)
         {
             Disciplina disciplinaAEditar = (Disciplina)DisciplinaListBox.SelectedItem;
             Disciplina editada = null;
-
             if (disciplinaAEditar != null)
             {
                 foreach (Disciplina disciplina in listaDisciplinas)
@@ -116,7 +100,6 @@ namespace WinFormsAlunos
             EditarDisciplinaForm editarDisciplinaForm = new EditarDisciplinaForm(this, editada);
             editarDisciplinaForm.Show();
         }
-
         private void DisciplinaForm_Load(object sender, EventArgs e)
         {
             if (File.Exists(caminhoDisciplinas))

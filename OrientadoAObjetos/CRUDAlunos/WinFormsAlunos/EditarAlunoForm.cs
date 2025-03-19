@@ -7,7 +7,6 @@ namespace WinFormsAlunos
         Aluno _editado;
 
         Form1 _form;
-
         public EditarAlunoForm(Form1 form, Aluno editado)
         {
             InitializeComponent();
@@ -50,7 +49,6 @@ namespace WinFormsAlunos
                 MessageBox.Show("Insira o apelido do aluno", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 output = false;
             }
-
             return output;
         }
     }
