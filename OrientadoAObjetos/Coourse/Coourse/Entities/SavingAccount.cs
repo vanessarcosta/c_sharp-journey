@@ -24,7 +24,9 @@
         //{
         //    Balance -= amount;
         //}
-        public override void Withdraw(double amount)
+
+        //sealed não pode ser sobreescrita novamente em outra subclasse
+        public sealed override void Withdraw(double amount)
         {
             base.Withdraw(amount);
             Balance -= 2.0;
