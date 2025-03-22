@@ -7,7 +7,7 @@
         public int Hours { get; private set; }
         public double ValuePerHour { get; set; }
 
-       // public Employee() { }
+        public Employee() { }
 
         public Employee(string name, int hours, double valuePerHour)
         {
@@ -16,7 +16,7 @@
             ValuePerHour = valuePerHour;
         }
 
-        public virtual double Payment ()
+        public virtual double Payment()
         {
             return ValuePerHour * Hours;
         }

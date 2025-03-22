@@ -1,16 +1,15 @@
 ﻿using SalaryEmployee.Entities;
-using System;
+using System.Globalization;
 
 namespace SalaryEmployee
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
             List<Employee> listEmployees = new List<Employee>();
             int numberEmployees = 0;
             string outsourced;
-            double additionalCharge = 0.0;
 
             Console.Write("Enter the number of employees: ");
             numberEmployees = int.Parse(Console.ReadLine());
@@ -25,22 +24,24 @@ namespace SalaryEmployee
                 string name = Console.ReadLine();
 
                 Console.Write("Hours: ");
-                int hours =int.Parse(Console.ReadLine());
+                int hours = int.Parse(Console.ReadLine());
 
                 Console.Write("Value per hour: ");
-                double valuePerHour = double.Parse(Console.ReadLine());
+                double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
                 if (outsourced == "y" || outsourced == "Y")
                 {
                     Console.Write("Additional charge: ");
-                    additionalCharge = double.Parse(Console.ReadLine());
-                    Employee newEmployee1 = new OutsourcedEmployee(name, hours, valuePerHour, additionalCharge);
-                    listEmployees.Add(newEmployee1);
+                    double additionalCharge = double.Parse(Console.ReadLine());
+                    //Employee newEmployee1 = new OutsourcedEmployee(name, hours, valuePerHour, additionalCharge);
+                    //listEmployees.Add(newEmployee1);
+                    listEmployees.Add(new OutsourcedEmployee(name, hours, valuePerHour, additionalCharge));
                 }
                 else
                 {
-                    Employee newEmployee = new Employee(name, hours, valuePerHour);
-                    listEmployees.Add(newEmployee);
+                    //    Employee newEmployee = new Employee(name, hours, valuePerHour);
+                    //    listEmployees.Add(newEmployee);
+                    listEmployees.Add(new Employee(name, hours, valuePerHour));
                 }
             }
 
