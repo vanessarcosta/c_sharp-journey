@@ -7,7 +7,7 @@
         public int Hours { get; private set; }
         public double ValuePerHour { get; set; }
 
-        public Employee() { }
+       // public Employee() { }
 
         public Employee(string name, int hours, double valuePerHour)
         {
@@ -19,6 +19,11 @@
         public virtual double Payment ()
         {
             return ValuePerHour * Hours;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} - $ {Payment():F2}";
         }
     }
 }
