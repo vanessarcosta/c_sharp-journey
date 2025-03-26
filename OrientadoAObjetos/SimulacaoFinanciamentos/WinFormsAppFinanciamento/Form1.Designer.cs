@@ -50,7 +50,7 @@
             comboBoxTipo.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold);
             comboBoxTipo.FormattingEnabled = true;
             comboBoxTipo.Items.AddRange(new object[] { "Carro", "Casa", "Outros" });
-            comboBoxTipo.Location = new Point(349, 94);
+            comboBoxTipo.Location = new Point(530, 107);
             comboBoxTipo.Name = "comboBoxTipo";
             comboBoxTipo.Size = new Size(201, 29);
             comboBoxTipo.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             lblInformacao.AutoSize = true;
             lblInformacao.Font = new Font("Garamond", 13.7739134F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblInformacao.Location = new Point(45, 325);
+            lblInformacao.Location = new Point(118, 335);
             lblInformacao.Name = "lblInformacao";
             lblInformacao.Size = new Size(0, 25);
             lblInformacao.TabIndex = 3;
@@ -68,7 +68,7 @@
             // btnSimular
             // 
             btnSimular.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSimular.Location = new Point(671, 72);
+            btnSimular.Location = new Point(936, 82);
             btnSimular.Name = "btnSimular";
             btnSimular.Size = new Size(132, 51);
             btnSimular.TabIndex = 4;
@@ -80,7 +80,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold);
-            label2.Location = new Point(45, 51);
+            label2.Location = new Point(118, 64);
             label2.Name = "label2";
             label2.Size = new Size(94, 21);
             label2.TabIndex = 5;
@@ -90,7 +90,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold);
-            label3.Location = new Point(349, 51);
+            label3.Location = new Point(530, 64);
             label3.Name = "label3";
             label3.Size = new Size(201, 21);
             label3.TabIndex = 6;
@@ -100,7 +100,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold);
-            label4.Location = new Point(45, 190);
+            label4.Location = new Point(118, 203);
             label4.Name = "label4";
             label4.Size = new Size(57, 21);
             label4.TabIndex = 7;
@@ -110,7 +110,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold);
-            label5.Location = new Point(208, 239);
+            label5.Location = new Point(281, 252);
             label5.Name = "label5";
             label5.Size = new Size(60, 21);
             label5.TabIndex = 8;
@@ -120,7 +120,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold);
-            label6.Location = new Point(208, 99);
+            label6.Location = new Point(281, 112);
             label6.Name = "label6";
             label6.Size = new Size(55, 21);
             label6.TabIndex = 9;
@@ -130,7 +130,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold);
-            label7.Location = new Point(512, 242);
+            label7.Location = new Point(693, 255);
             label7.Name = "label7";
             label7.Size = new Size(61, 21);
             label7.TabIndex = 12;
@@ -140,7 +140,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold);
-            label8.Location = new Point(349, 193);
+            label8.Location = new Point(530, 206);
             label8.Name = "label8";
             label8.Size = new Size(53, 21);
             label8.TabIndex = 11;
@@ -149,7 +149,7 @@
             // txtMontante
             // 
             txtMontante.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtMontante.Location = new Point(45, 94);
+            txtMontante.Location = new Point(118, 107);
             txtMontante.Name = "txtMontante";
             txtMontante.Size = new Size(141, 29);
             txtMontante.TabIndex = 13;
@@ -157,7 +157,7 @@
             // txtPrazo
             // 
             txtPrazo.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPrazo.Location = new Point(45, 231);
+            txtPrazo.Location = new Point(118, 244);
             txtPrazo.Name = "txtPrazo";
             txtPrazo.Size = new Size(141, 29);
             txtPrazo.TabIndex = 14;
@@ -165,7 +165,7 @@
             // txtJuros
             // 
             txtJuros.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtJuros.Location = new Point(349, 239);
+            txtJuros.Location = new Point(530, 252);
             txtJuros.Name = "txtJuros";
             txtJuros.Size = new Size(157, 29);
             txtJuros.TabIndex = 15;
@@ -173,7 +173,7 @@
             // btnLimpar
             // 
             btnLimpar.Font = new Font("Garamond", 11.8956518F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLimpar.Location = new Point(671, 209);
+            btnLimpar.Location = new Point(936, 219);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(132, 51);
             btnLimpar.TabIndex = 16;
@@ -185,7 +185,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(883, 467);
+            ClientSize = new Size(1208, 441);
             Controls.Add(btnLimpar);
             Controls.Add(txtJuros);
             Controls.Add(txtPrazo);

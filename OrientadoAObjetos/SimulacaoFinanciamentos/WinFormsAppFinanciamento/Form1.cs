@@ -1,5 +1,4 @@
 using Biblioteca;
-using System.Drawing;
 
 namespace WinFormsAppFinanciamento
 {
@@ -21,7 +20,6 @@ namespace WinFormsAppFinanciamento
             telefoneFiador = 0;
             nifFiador = 0;
             rendimentoFiador = 0.0;
-
         }
 
         private void btnSimular_Click(object sender, EventArgs e)
@@ -47,6 +45,13 @@ namespace WinFormsAppFinanciamento
                     FinanciamentoDeCasa novofinanciamentoDeCasa = new FinanciamentoDeCasa(montante, prazoPagamento, jurosAnual, nomeFiador, moradaFiador, telefoneFiador, nifFiador, rendimentoFiador);
                     novofinanciamentoDeCasa.ValorPrestacao();
                     lblInformacao.Text = novofinanciamentoDeCasa.ToString();
+                }
+
+                if (comboBoxTipo.Text == "Outros")
+                {
+                    FinanciamentoOutros novoFinanciamentoOutros = new FinanciamentoOutros(montante, prazoPagamento, jurosAnual);
+                    novoFinanciamentoOutros.ValorPrestacao();
+                    lblInformacao.Text = novoFinanciamentoOutros.ToString();
                 }
             }
         }
@@ -102,7 +107,6 @@ namespace WinFormsAppFinanciamento
                 FrmFiador frmFiador = new FrmFiador(this);
                 frmFiador.ShowDialog();
             }
-
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -110,7 +114,7 @@ namespace WinFormsAppFinanciamento
             txtJuros.Clear();
             txtMontante.Clear();
             txtPrazo.Clear();
-            lblInformacao.Text= string.Empty;
+            lblInformacao.Text = string.Empty;
         }
     }
 }
