@@ -19,7 +19,7 @@
             }        
         }
         public FinanciamentoDeCarro(double montante, int prazoPagamento, double jurosAnual)
-            :base(montante, jurosAnual) 
+            :base(montante,prazoPagamento, jurosAnual) 
         {
             PrazoPagamento = prazoPagamento;
         }

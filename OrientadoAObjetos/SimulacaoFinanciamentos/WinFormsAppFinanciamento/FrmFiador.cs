@@ -1,8 +1,17 @@
-﻿namespace WinFormsAppFinanciamento
+﻿using Biblioteca;
+
+namespace WinFormsAppFinanciamento
 {
     public partial class FrmFiador : Form
     {
+        public string nomeFiador = string.Empty;
+        public string moradaFiador;
+        public int telefoneFiador;
+        public int nifFiador;
+        public double rendimentoFiador;
+        Fiador novoFiador;
         Form1 _form1;
+
         public FrmFiador(Form1 form1)
         {
             InitializeComponent();
@@ -11,9 +20,16 @@
 
         private void btnSalvarFiador_Click(object sender, EventArgs e)
         {
-            ValidarForm();
-            _form1.nomeFiador = txtNome.Text;
-            _form1.moradaFiador = txtMorada.Text;
+            if (ValidarForm())
+            {
+                novoFiador = new Fiador();
+                novoFiador.NomeFiador = txtNome.Text;
+                novoFiador.MoradaFiador = txtMorada.Text;
+                novoFiador.TelefoneFiador = telefoneFiador;
+                novoFiador.NifFiador = nifFiador;
+                novoFiador.RendimentoFiador = rendimentoFiador;
+            }
+            _form1._fiador = novoFiador;
             this.Close();
         }
         private bool ValidarForm()
@@ -30,20 +46,17 @@
                 MessageBox.Show("Insira a morada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 output = false;
             }
-
-            if (string.IsNullOrEmpty(txtTelefone.Text) || !int.TryParse(txtTelefone.Text, out _form1.telefoneFiador))
+            if (string.IsNullOrEmpty(txtTelefone.Text) || !int.TryParse(txtTelefone.Text, out telefoneFiador))
             {
                 MessageBox.Show("Insira um valor válido para telefone.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 output = false;
             }
-
-            if (string.IsNullOrEmpty(txtNif.Text) || !int.TryParse(txtNif.Text, out _form1.nifFiador))
+            if (string.IsNullOrEmpty(txtNif.Text) || !int.TryParse(txtNif.Text, out nifFiador))
             {
                 MessageBox.Show("Insira um valor válido de NIF.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 output = false;
             }
-
-            if (string.IsNullOrEmpty(txtRendimentoAnual.Text) || !double.TryParse(txtRendimentoAnual.Text, out _form1.rendimentoFiador))
+            if (string.IsNullOrEmpty(txtRendimentoAnual.Text) || !double.TryParse(txtRendimentoAnual.Text, out rendimentoFiador))
             {
                 MessageBox.Show("Insira um valor válido de rendimento.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 output = false;

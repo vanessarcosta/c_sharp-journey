@@ -4,13 +4,14 @@
     {
         public double Montante { get; private set; }
 
-        public abstract int PrazoPagamento { get; set; }
+        public virtual int PrazoPagamento { get; set; }
 
         public double JurosAnual { get; private set; }
 
-        public Financiamento(double montante, double jurosAnual)
+        public Financiamento(double montante, int prazoPagamento, double jurosAnual)
         {
             Montante = montante;
+            PrazoPagamento = prazoPagamento;
             JurosAnual = jurosAnual;
         }
 

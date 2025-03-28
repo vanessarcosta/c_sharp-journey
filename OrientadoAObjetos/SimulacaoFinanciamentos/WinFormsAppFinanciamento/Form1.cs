@@ -7,19 +7,12 @@ namespace WinFormsAppFinanciamento
         double montante;
         int prazoPagamento;
         double jurosAnual;
-        public string nomeFiador;
-        public string moradaFiador;
-        public int telefoneFiador;
-        public int nifFiador;
-        public double rendimentoFiador;
+        public Fiador _fiador;
+        
         public Form1()
         {
             InitializeComponent();
-            nomeFiador = string.Empty;
-            moradaFiador = string.Empty;
-            telefoneFiador = 0;
-            nifFiador = 0;
-            rendimentoFiador = 0.0;
+            _fiador = new Fiador();
         }
 
         private void btnSimular_Click(object sender, EventArgs e)
@@ -42,9 +35,9 @@ namespace WinFormsAppFinanciamento
 
                 if (comboBoxTipo.Text == "Casa")
                 {
-                    FinanciamentoDeCasa novofinanciamentoDeCasa = new FinanciamentoDeCasa(montante, prazoPagamento, jurosAnual, nomeFiador, moradaFiador, telefoneFiador, nifFiador, rendimentoFiador);
+                    FinanciamentoDeCasa novofinanciamentoDeCasa = new FinanciamentoDeCasa(montante,prazoPagamento, jurosAnual);
                     novofinanciamentoDeCasa.ValorPrestacao();
-                    lblInformacao.Text = novofinanciamentoDeCasa.ToString();
+                    lblInformacao.Text = novofinanciamentoDeCasa.ToString() + _fiador.ToString();
                 }
 
                 if (comboBoxTipo.Text == "Outros")

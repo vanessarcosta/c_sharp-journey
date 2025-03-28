@@ -5,13 +5,9 @@
         private double _comissaoDeAbertura = 0.01;
 
         private double _taxaDeAmortizacao = 0.05;
-        public override int PrazoPagamento { get; set; }
 
         public FinanciamentoOutros(double montante, int prazoPagamento, double jurosAnual)
-            : base(montante, jurosAnual)  
-        {
-            PrazoPagamento = prazoPagamento;
-        }
+            : base(montante,prazoPagamento, jurosAnual) { }
 
         public override double ValorPrestacao()
         {

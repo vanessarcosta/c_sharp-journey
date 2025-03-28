@@ -3,26 +3,9 @@
     public class FinanciamentoDeCasa: Financiamento
     {
         private double _spread = 1.5;
-        public override int PrazoPagamento {  get; set; }
-
-        public string NomeFiador { get; set; }
-        public string MoradaFiador { get; set; }
-        public int TelefoneFiador { get; set; }
-        public int NifFiador { get; set; }
-        public double RendimentoFiador { get; set; }
-
-        public FinanciamentoDeCasa(double montante, int prazoPagamento, double jurosAnual, 
-            string nomeFiador, string moradaFiador, int telefoneFiador, int nifFiador, double rendimentoFiador)
-            :base(montante, jurosAnual)
-        {
-            PrazoPagamento = prazoPagamento;
-            NomeFiador = nomeFiador;
-            MoradaFiador = moradaFiador;
-            TelefoneFiador = telefoneFiador;
-            NifFiador = nifFiador;
-            RendimentoFiador = rendimentoFiador;
-        }
-
+        
+        public FinanciamentoDeCasa(double montante, int prazoPagamento, double jurosAnual)
+            :base(montante,prazoPagamento, jurosAnual) { }
         public override double ValorPrestacao()
         {
             double jurosMensal = ((JurosAnual +_spread)/ 12.0 / 100.0);
@@ -31,9 +14,7 @@
 
         public override string ToString()
         {
-            return $"O financiamento da casa possui: \n"
-                + base.ToString() 
-                + $"\nFiador: {NomeFiador},Morada: {MoradaFiador}\n, NIF: {NifFiador}, Rendimento: {RendimentoFiador:F2}";
+            return $"O financiamento da casa possui: \n" + base.ToString();
         }
     }
 }
