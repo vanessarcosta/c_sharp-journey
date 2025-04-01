@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace LInqBD
 {
-    class Program2
+    class Program3
     {
-        static void Main(string[] args)
+        static void Main3(string[] args)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
 
