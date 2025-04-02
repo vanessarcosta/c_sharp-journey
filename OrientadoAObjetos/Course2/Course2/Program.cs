@@ -5,6 +5,8 @@ namespace Course2
     internal class Program
     {
         delegate double BinaryNumericOperation(double n1, double n2);
+
+        delegate void BinaryNumericOperation1(double n1, double n2);
         static void Main(string[] args)
         {
             double a = 10;
@@ -28,7 +30,7 @@ namespace Course2
 
             result = CalculationService.Square(a);
             Console.WriteLine(result);
-            
+
             //sem delegate
             ////double result = CalculationService.Sum(a, b);
             ////Console.WriteLine(result);
@@ -38,6 +40,13 @@ namespace Course2
 
             //// result = CalculationService.Square(a);
             ////Console.WriteLine(result);
+            ///
+
+            Console.WriteLine("----------Multicast delegate----------------");
+            BinaryNumericOperation1 ope = CalculationService.ShowSum;
+            ope += CalculationService.ShowMax; // ope guarda referencia para 2 funções
+
+            ope.Invoke(a, b);   // ou pode ---  ope(a, b);
         }
     }
 }
