@@ -1,6 +1,9 @@
 ﻿using Course3.Entities;
 using System.Net;
 using System.Runtime.Intrinsics.X86;
+using System.Linq;
+using System;
+
 namespace Course3
 {
     internal class Program
@@ -42,13 +45,40 @@ namespace Course3
                 Console.WriteLine(p);
             }
 
+            Console.WriteLine("-------------Func-----------");
+            //////////Fazer um programa que, a partir de uma lista de produtos, gere uma
+            //////////nova lista contendo os nomes dos produtos em caixa alta.
 
+            //sem delegate
+            //List<string> result = list.Select(NameUpper).ToList();
+
+            //delegate
+            //Func<Product, string> func =NameUpper;
+
+            //sem referencia de método com lambda
+            //Func<Product, string> func = p => p.Name.ToUpper();   // qdo o lamba retorna alguma coisa pode apagar as chaves e o return - p => { return p.Name.ToUpper(); };
+            //List<string> result = list.Select(func).ToList();
+
+            //lambda em inline
+            List<string> result = list.Select(p => p.Name.ToUpper()).ToList();
+            foreach (string s in result)
+            {
+                Console.WriteLine(s);
+            }
         }
+        //Func
+        //////static string NameUpper(Product p)
+        //////{
+        //////    return p.Name.ToUpper();
+        //////}
+     
+
         //Action
         ////static void UpdatePrice(Product p)
         ////{
         ////    p.Price += p.Price * 0.1;
         ////}
+        
         //Predicate
         public static bool ProductTest(Product p)
         {
