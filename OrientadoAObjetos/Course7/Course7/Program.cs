@@ -23,7 +23,7 @@ namespace Course7
 
             CarrRental carrRental = new CarrRental(start, finish, new Vehicle(model));
 
-            RentalServices rentalServices = new RentalServices(hour, day);
+            RentalServices rentalServices = new RentalServices(hour, day, new BrazilTaxService());
 
             rentalServices.ProcessInvoice(carrRental);
 

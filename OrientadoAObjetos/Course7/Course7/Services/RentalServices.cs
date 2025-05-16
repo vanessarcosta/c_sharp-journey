@@ -8,12 +8,17 @@ namespace Course7.Services
 
         public double  PricePerDay { get; private set; }
 
-        private BrazilTaxService _brazilTaxService = new BrazilTaxService();
+        //temos a declaração da indepedencia e a sua instanciação == depedencia muito forte
+        //private BrazilTaxService _brazilTaxService = new BrazilTaxService();
 
-        public RentalServices(double pricePerHour, double pricePerDay)
+        private ITaxService _taxService;
+
+
+        public RentalServices(double pricePerHour, double pricePerDay, ITaxService taxService)
         {
             PricePerHour = pricePerHour;
             PricePerDay = pricePerDay;
+            _taxService = taxService;
         }
 
         public void ProcessInvoice(CarrRental carrRental)
@@ -30,7 +35,7 @@ namespace Course7.Services
                 basicPayment = PricePerDay * Math.Ceiling(duration.TotalDays);
             }
 
-            double tax = _brazilTaxService.Tax(basicPayment);
+            double tax = _taxService.Tax(basicPayment);
 
             carrRental.Invoice = new Invoice(basicPayment, tax);
         }
