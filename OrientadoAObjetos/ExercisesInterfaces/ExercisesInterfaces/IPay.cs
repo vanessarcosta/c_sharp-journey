@@ -2,6 +2,6 @@
 {
     public interface IPay
     {
-        double ValueToPat();
+        double ValueToPay();
     }
 }
