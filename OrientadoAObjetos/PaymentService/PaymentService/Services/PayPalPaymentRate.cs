@@ -1,6 +1,6 @@
 ﻿namespace PaymentService.Services
 {
-    class PayPalPaymentRate
+    class PayPalPaymentRate : IPaymentRate
     {
         public double Rate(double amount)
         {
