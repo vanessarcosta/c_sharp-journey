@@ -7,5 +7,7 @@
         public DateTime Date { get; set; }
 
         public double TotalValue { get; set; }
+
+        public Installment Installment { get; set; }
     }
 }
